@@ -18,8 +18,10 @@
 * Am Ende jedes Hinweises gibt es eine stichpunktartige Zusammenfassung dieses Hinweises
 
 ## Ablauf & Material
-* Einleitung, Rollenbeschreibungen, Hinweishefte (4 Runden) und Auflösungstext müssen vorhanden sein.【F:rules_for_krimidinner.md†L16-L21】
-* Inspektor-Ergebnisse müssen zu Beginn jeder Hinweisrunde vorliegen.【F:Play-rules.md†L4-L4】【F:Play-rules.md†L42-L46】
+* Einleitung: bei haltet das Setting der Geschichte sodass spieler sich in die Situation gut einfühlen können
+*  Rollenbeschreibungen: jeder Spieler erhält eine Beschreibung seines Charakters um sich in den Charakter versetzen zu können.
+*  Hinweishefte (4 Runden) und Auflösungstext müssen vorhanden sein.【F:rules_for_krimidinner.md†L16-L21】
+* Inspektor-Ergebnisse müssen zu Beginn der ersten Hinweisrunde vorliegen.【F:Play-rules.md†L4-L4】【F:Play-rules.md†L42-L46】
 
 ## Spielerfahrung
 * Diskussionen sollen möglich sein, ohne dass die Regeln den Spielfluss blockieren.【F:Play-rules.md†L70-L71】
