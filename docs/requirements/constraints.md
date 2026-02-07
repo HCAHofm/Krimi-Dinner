@@ -47,11 +47,5 @@
 2. Reihum: Zettel zeigen und begründen.  
 3. Die „Auflösung“ wird vorgelesen – Ende des Spiels.  
 
-
-
-
-* 【F:rules_for_krimidinner.md†L16-L21】
-Hinweisrunde 1: Zeitlicher Ablauf (Wer war wann, wo und mit wem?) Hinweisrunde 2: Information über das Opfer, die einen selbst oder/und andere Verdächtige belasten könnten. Suggestivfragen um Diskussion anzuregen Hinweisrunde 3: Ein Fakt über das Opfer, den die anderen Verdächtigen nocht nicht kannten Hinweisrunde 4: 
-
 ## Spielerfahrung
 * Diskussionen sollen möglich sein, ohne dass die Regeln den Spielfluss blockieren.【F:Play-rules.md†L70-L71】
