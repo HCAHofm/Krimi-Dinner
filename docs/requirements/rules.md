@@ -17,8 +17,8 @@
 * Improvisation: Fehlende Infos dürfen ergänzt werden; falsche Aussagen wegen späterer Hinweise sollen zeitnah korrigiert werden.【F:Play-rules.md†L31-L33】
 
 ## Spielablauf (6 Akte)
-1. **Einführung:** Einführungstext vorlesen, danach kurze Charaktervorstellungen (ohne Fragen).【F:Play-rules.md†L37-L40】
-2. **Hinweisrunde 1 (zeitlicher Ablauf):** Hinweise 1 lesen, Inspektor-Ergebnisse vorlesen, Diskussion/Fragen; Hinweise teilen, wenn sie nicht die eigene Rolle belasten. Fokus: wer wann wo und mit wem war.【F:Play-rules.md†L42-L52】【F:rules_for_krimidinner.md†L6-L7】
+1. **Einführung:** Einführungstext wird von erinnert Person vorgelesen, danach stellt jeder seinen charakter anhand der beschreibung die nur der spieler des charakters erhalzen hat vor (ohne Fragen).【F:Play-rules.md†L37-L40】
+2. **Hinweisrunde 1 (zeitlicher Ablauf):** alle spieler lesen die Hinweise 1, die sie jeweils für ihren Charakter erhalten haben. jeder kennt ausschließlich die hinweise für den eigenen charakter.  Inspektor-Ergebnisse werden von einer person für alle vorgelesen, Diskussion/Fragen; Hinweise teilen, wenn sie nicht die eigene Rolle belasten. Fokus: wer wann wo und mit wem war.【F:Play-rules.md†L42-L52】【F:rules_for_krimidinner.md†L6-L7】
 3. **Hinweisrunde 2 (Belastung & Suggestivfragen):** Ablauf wie Hinweisrunde 1, mit Hinweisen zu Opfer/Verdächtigen und gezielten Suggestivfragen für die Diskussion.【F:Play-rules.md†L54-L55】【F:rules_for_krimidinner.md†L7-L8】
 4. **Hinweisrunde 3 (Gerüchte & neue Fakten):** Jede Rolle trägt ein Gerücht vor, wahr oder falsch, Ziel ist die Überprüfung der Gerüchte; zusätzlich ein neuer Fakt über das Opfer.【F:Play-rules.md†L57-L59】【F:rules_for_krimidinner.md†L8-L9】
 5. **Hinweisrunde 4 (Motive):** Ablauf wie Hinweisrunde 1, Motive anderer Verdächtiger werden beschrieben und mit Fragen hinterlegt.【F:Play-rules.md†L61-L62】【F:rules_for_krimidinner.md†L9-L10】
