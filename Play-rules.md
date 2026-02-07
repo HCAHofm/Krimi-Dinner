@@ -29,35 +29,6 @@
   * Wenn eine Information nicht aus Rollenbeschreibung oder Hinweisen hervorgeht, darf frei improvisiert werden.  
   * Falls jemand unabsichtlich falsch antwortet (z. B. weil ein Hinweis erst später kommt), sollte dies schnell korrigiert werden.  
 
-## Spielablauf (6 Akte)
-### 1. Akt – Einführung
-* Eine festgelegte Person liest den Einführungstext vor.  
-* Danach stellen sich alle Charaktere kurz vor (Name, Rolle, Motivation).  
-* **Wichtig:** In dieser Phase noch keine Fragen stellen.  
-
-### 2. Akt – Hinweisrunde 1
-1. Hinweise 1 werden geheim ausgeteilt und gelesen.  
-2. Inspektor-Ergebnisse werden vorgelesen.  
-3. Diskussion:  
-   * Hinweise, die nicht die eigene Person belasten, sollen offen geteilt werden.  
-   * Verdächtigungen und Rückfragen sind erlaubt.  
-4. Die Runde endet, wenn alle Hinweise diskutiert wurden und keine Fragen mehr offen sind.  
-
-### 3. Akt – Hinweisrunde 2
-* Ablauf wie Hinweisrunde 1.  
-
-### 4. Akt – Hinweisrunde 3 (Gerüchterunde)
-* Jede Rolle trägt ein Gerücht vor, das wahr oder falsch sein kann.  
-* Ziel: herausfinden, welche Gerüchte stimmen.  
-
-### 5. Akt – Hinweisrunde 4
-* Ablauf wie Hinweisrunde 1.  
-
-### 6. Akt – Auflösung
-1. Jede Person notiert **verdeckt** ihren Verdacht (Name des Täters/der Täterin).  
-2. Reihum: Zettel zeigen und begründen.  
-3. Die „Auflösung“ wird vorgelesen – Ende des Spiels.  
-
 ## Hinweise für einen gelungenen Abend
 * Diskussionen sind erwünscht – das Spiel lebt vom Austausch.  
 * Fehler in der Regel- oder Rollenauslegung passieren: lieber weiterspielen und Spaß haben.  
