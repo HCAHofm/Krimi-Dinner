@@ -21,7 +21,7 @@
 * Einleitung: bei haltet das Setting der Geschichte sodass spieler sich in die Situation gut einfühlen können
 *  Rollenbeschreibungen: jeder Spieler erhält eine Beschreibung seines Charakters um sich in den Charakter versetzen zu können.
 *  Hinweishefte (4 Runden) und Auflösungstext müssen vorhanden sein.【F:rules_for_krimidinner.md†L16-L21】
-* Inspektor-Ergebnisse müssen zu Beginn der ersten Hinweisrunde vorliegen.【F:Play-rules.md†L4-L4】【F:Play-rules.md†L42-L46】
+Hinweisrunde 1: Zeitlicher Ablauf (Wer war wann, wo und mit wem?) Hinweisrunde 2: Information über das Opfer, die einen selbst oder/und andere Verdächtige belasten könnten. Suggestivfragen um Diskussion anzuregen Hinweisrunde 3: Ein Fakt über das Opfer, den die anderen Verdächtigen nocht nicht kannten Hinweisrunde 4: Konkrete Motive anderer Verdächtiger werden beschrieben und mit Fragen hinterlegt Auflösung
 
 ## Spielerfahrung
 * Diskussionen sollen möglich sein, ohne dass die Regeln den Spielfluss blockieren.【F:Play-rules.md†L70-L71】
