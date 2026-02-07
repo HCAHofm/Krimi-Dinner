@@ -15,6 +15,7 @@
 * Hinweise sind rollenexklusiv: Nur die Rolle, die den Hinweis erhält, kennt ihn zu Beginn.
 * Täter:in erhält keine Hinweise, die ihn/sie wissentlich und eindeutig selbst belasten.
 * Es gibt klare Hinweise, die zum Täter/zur Täterin führen, aber auch Hinweise, die andere Personen plausibel erscheinen lassen, damit die Lösung nicht sofort eindeutig ist.
+* Am Ende jedes Hinweises gibt es eine stichpunktartige Zusammenfassung dieses Hinweises
 
 ## Ablauf & Material
 * Einleitung, Rollenbeschreibungen, Hinweishefte (4 Runden) und Auflösungstext müssen vorhanden sein.【F:rules_for_krimidinner.md†L16-L21】
