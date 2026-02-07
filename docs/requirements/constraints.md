@@ -7,6 +7,7 @@
 ## Logische Konsistenz
 * Rollenbeschreibung, Hinweise und Auflösung dürfen sich nicht widersprechen; insbesondere muss der Tatablauf zu Alibis und Motiv passen.【F:Play-rules.md†L23-L33】【F:rules_for_krimidinner.md†L6-L10】
 * Hinweise müssen mit der Wahrheitspflicht kompatibel sein (wer darf was sagen/verschweigen?).【F:Play-rules.md†L23-L29】
+* jeder spieler kennt nur die Hinweise zum eigenen Charakter
 
 ## Hinweisabdeckung
 * Für jede Rolle existieren pro Hinweisrunde passende Hinweise oder Gerüchte gemäß Ablaufstruktur.【F:Play-rules.md†L42-L62】【F:rules_for_krimidinner.md†L6-L10】
