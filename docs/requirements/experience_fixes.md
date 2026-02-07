@@ -1,5 +1,7 @@
 # Verpflichtende Verbesserungen aus der Erfahrungskritik
 
+hier sollen Erfahrungen beim erstellen eines spiels als wissensspeicher für zukünftige Spielerstellungen aufgeschrieben werden
+
 **Zweck:** Maßnahmen zur besseren Spielbarkeit und Struktur.
 **Status:** Entwurf
 **Letzte Änderung:** 2025-09-25
