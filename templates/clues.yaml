@@ -3,10 +3,10 @@ clues:
   - id: K_DOC_3
     type: document
     title: "Mahnung und Kontoauszug"
-    description: "Zeigt, dass Alma akut unter finanziellem Druck steht und das Opfer als Glaeubiger/Blockierer auftaucht."
+    description: "Zeigt, dass Char_A akut unter finanziellem Druck steht und das Opfer als Glaeubiger/Blockierer auftaucht."
     points_to:
-      suspects: [C_ALMA]
-      motives: [M_ALMA_1]
+      suspects: [Char_A]
+      motives: [M_Char_A_1]
     timeline_links:
       related_beats: [B_2100_TOAST]
     reliability: 3
@@ -22,10 +22,10 @@ clues:
   - id: K_DOC_9
     type: document
     title: "Testamentsentwurf mit Versionsvermerk"
-    description: "Ein Entwurf mit handschriftlichen Aenderungen; der Versionsstempel passt zu Almas Buero-Schreibpapier."
+    description: "Ein Entwurf mit handschriftlichen Aenderungen; der Versionsstempel passt zu Char_As Buero-Schreibpapier."
     points_to:
-      suspects: [C_ALMA]
-      motives: [M_ALMA_2]
+      suspects: [Char_A]
+      motives: [M_Char_A_2]
     timeline_links:
       related_beats: [B_2110_SPLIT]
     reliability: 2
@@ -44,8 +44,8 @@ clues:
     title: "Entwurf einer nie gesendeten Nachricht"
     description: "Auf dem Tablet des Opfers: 'Wenn du heute Abend nicht gestehst, zeige ich alles.' (ohne Empfaengername)."
     points_to:
-      suspects: [C_ALMA, C_TOBIAS]
-      motives: [M_ALMA_2]
+      suspects: [Char_A, Char_D]
+      motives: [M_Char_A_2]
     timeline_links:
       related_beats: [B_2100_TOAST]
     reliability: 2
@@ -62,37 +62,37 @@ clues:
   - id: K_WIT_2
     type: testimony
     title: "Streit vor dem Essen"
-    description: "Eine Person hoerte Alma und das Opfer angespannt ueber Geld sprechen."
+    description: "Eine Person hoerte Char_A und das Opfer angespannt ueber Geld sprechen."
     points_to:
-      suspects: [C_ALMA]
-      motives: [M_ALMA_1]
+      suspects: [Char_A]
+      motives: [M_Char_A_1]
     timeline_links:
       related_beats: [B_2100_TOAST]
     reliability: 2
     discoverability:
-      holder: "role:C_NORA"
+      holder: "role:Char_C"
       earliest_round: 1
-      method: "Nora erzaehlt es nur, wenn sie merkt, dass Alma verdaechtigt wird."
+      method: "Char_C erzaehlt es nur, wenn sie merkt, dass Char_A verdaechtigt wird."
     knowledge:
-      initial_holders: [C_NORA]
+      initial_holders: [Char_C]
       public_when_revealed: false
 
   - id: K_WIT_4
     type: testimony
-    title: "Almas 'ehrlich klaeren'-Satz"
-    description: "Kurz vor dem Mord sagte Alma sinngemaess: 'Heute wird alles endlich sauber.'"
+    title: "Char_As 'ehrlich klaeren'-Satz"
+    description: "Kurz vor dem Mord sagte Char_A sinngemaess: 'Heute wird alles endlich sauber.'"
     points_to:
-      suspects: [C_ALMA]
+      suspects: [Char_A]
       motives: []
     timeline_links:
       related_beats: [B_2110_SPLIT]
     reliability: 1
     discoverability:
-      holder: "role:C_VIKTOR"
+      holder: "role:Char_B"
       earliest_round: 2
-      method: "Viktor nutzt es als rhetorischen Angriff gegen Alma."
+      method: "Char_B nutzt es als rhetorischen Angriff gegen Char_A."
     knowledge:
-      initial_holders: [C_VIKTOR]
+      initial_holders: [Char_B]
       public_when_revealed: true
 
   # --- Spuren am Tatort / Methodenkette ---
@@ -101,7 +101,7 @@ clues:
     title: "Tee-Fleck und Zuckerzange"
     description: "In der Bibliothek: ein frischer Tee-Fleck am Rand des Beistelltisches; Zuckerzange klebt leicht."
     points_to:
-      suspects: [C_TOBIAS, C_VIKTOR]
+      suspects: [Char_D, Char_B]
       motives: []
     timeline_links:
       related_beats: [B_2130_DISCOVERY]
@@ -119,17 +119,17 @@ clues:
   - id: K_DOC_7
     type: document
     title: "Unterschriftsbereite Kreditlinie"
-    description: "Eine Bankzusage, die Almas finanzielle Lage kurzfristig haette stabilisieren koennen."
+    description: "Eine Bankzusage, die Char_As finanzielle Lage kurzfristig haette stabilisieren koennen."
     points_to:
       suspects: []
-      motives: [M_ALMA_1]
+      motives: [M_Char_A_1]
     timeline_links:
       related_beats: [B_2100_TOAST]
     reliability: 2
     discoverability:
-      holder: "role:C_TOBIAS"
+      holder: "role:Char_D"
       earliest_round: 2
-      method: "Tobias hat sie in seinen Unterlagen; er gibt sie nur heraus, wenn es ihm taktisch nuetzt."
+      method: "Char_D hat sie in seinen Unterlagen; er gibt sie nur heraus, wenn es ihm taktisch nuetzt."
     knowledge:
-      initial_holders: [C_TOBIAS]
+      initial_holders: [Char_D]
       public_when_revealed: false

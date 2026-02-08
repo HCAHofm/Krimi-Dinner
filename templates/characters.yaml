@@ -1,91 +1,93 @@
 # Dies ist ein Beispiel für die Charaktere, deren Eigeschaften, Beziehungen und Geheimnisse. Bei der Erstellung eigener Charaktere sollten die Eigenschaften so gewählt werden, dass sie interessante Dynamiken und Konflikte ermöglichen, die im Laufe des Spiels aufgedeckt werden können. Die Geheimnisse sollten eng mit den Zielen und Beziehungen der Charaktere verknüpft sein, um die Spannung zu erhöhen.
 characters:
-  - id: C_ALMA
-    name: "Alma Krüger"
+  - id: Char_A
+    name: "Char_A"
     public_description: "Galeristin, souverän, wirkt kontrolliert."
     traits:
       - "charmant"
       - "konfliktscheu"
       - "risikobereit"
     goals:
-      public_goal: "Den Abend ohne Skandal überstehen."
-      private_goal: "Ein belastendes Dokument zurückholen."
+      public_goal: "Den Abend ohne öffentlichen Skandal überstehen, Verdächtigungen moderieren und den Eindruck kontrollierter Kooperation aufrechterhalten."
+      private_goal: "Ein belastendes Dokument zurückholen, bevor es in fremde Hände gerät, und jede Verbindung zu ihrer Manipulation des Testaments verwischen."
     relationships:
-      - with: C_VIKTOR
+      - with: Char_B
         type: "geschäftlich"
         valence: -2      # -3..+3 (Konflikt/Bindung)
-        notes: "Viktor schuldet Alma Geld."
-      - with: C_NORA
+        notes: "Char_B schuldet Char_A Geld."
+      - with: Char_C
         type: "freundschaft"
         valence: +2
-        notes: "Nora weiß zu viel über Alma."
+        notes: "Char_C weiß zu viel über Char_A."
     secrets:
-      - id: S_ALMA_1
-        summary: "Alma hat das Testament manipuliert (Beweis existiert)."
+      - id: S_Char_A_1
+        summary: "Char_A hat das Testament manipuliert, einzelne Formulierungen nachträglich angepasst und eine frühere Version entfernt; ein materieller Beweis dafür existiert weiterhin."
         stakes: "Ruin/Haft"
-        holders: [C_ALMA]            # Wer weiß es sicher
+        holders: [Char_A]            # Wer weiß es sicher
         reveal_rule:
           earliest_round: 2
           trigger: "Wenn jemand nach dem Testament fragt"
     murder_context:
+      is_murder: false                # true nur bei der tatsächlichen Täterrolle
       motives:
-        - id: M_ALMA_1
+        - id: M_Char_A_1
           type: "finanziell"
           strength: 3                 # 1..3
-          rationale: "Opfer wollte Alma auffliegen lassen."
+          rationale: "Das Opfer wollte Char_A mit einer dokumentierten Vergleichsversion des Testaments konfrontieren und ihr damit beruflichen Ruin sowie strafrechtliche Folgen aufzwingen."
           supports_clues: [K_DOC_3]
       opportunities:
         access_level: "mittel"        # niedrig/mittel/hoch
         constraints: "War zwischen 21:10-21:20 unbeobachtet."
-  - id: C_TOBIAS
-    name: "Tobias Lennert"
+  - id: Char_D
+    name: "Char_D"
     public_description: "Anwalt des Opfers, geschniegelt, wirkt hilfsbereit, beantwortet Fragen oft mit Gegenfragen."
     traits:
       - "analytisch"
       - "ehrgeizig"
       - "kontrolliert"
     goals:
-      public_goal: "Den Abend geordnet halten und Eskalationen vermeiden."
-      private_goal: "Ein verschwundenes Schriftstück finden, bevor es jemand anderes findet."
+      public_goal: "Den Abend geordnet halten, Konflikte juristisch einrahmen und spontane Aussagen unterbinden, die die Runde sofort spalten könnten."
+      private_goal: "Ein verschwundenes Schriftstück finden, bevor es jemand anderes findet, und die Spur zu seiner eigenen 'kreativen' Vertragsauslegung verdecken."
     relationships:
-      - with: C_VIKTOR
+      - with: Char_B
         type: "rivalität"
         valence: -2
-        notes: "Beide konkurrieren um Einfluss beim Opfer; Tobias hält Viktor für unzuverlässig."
-      - with: C_ALMA
+        notes: "Beide konkurrieren um Einfluss beim Opfer; Char_D hält Char_B für unzuverlässig."
+      - with: Char_A
         type: "geschäftlich"
         valence: +1
-        notes: "Tobias hat Alma juristisch geholfen; er erwartet dafür Loyalität."
-      - with: C_NORA
+        notes: "Char_D hat Char_A juristisch geholfen; er erwartet dafür Loyalität."
+      - with: Char_C
         type: "schutz"
         valence: +1
-        notes: "Er behandelt Nora herablassend 'fürsorglich' und unterschätzt sie."
+        notes: "Er behandelt Char_C herablassend 'fürsorglich' und unterschätzt sie."
     secrets:
-      - id: S_TOBIAS_1
-        summary: "Tobias hat eine Klausel im Sinne des Opfers 'kreativ' ausgelegt und sich damit angreifbar gemacht."
+      - id: S_Char_D_1
+        summary: "Char_D hat eine Klausel im Sinne des Opfers 'kreativ' ausgelegt, gegenteilige Hinweise im Begleitprotokoll abgeschwächt und sich dadurch berufsrechtlich angreifbar gemacht."
         stakes: "Berufsverbot / Erpressbarkeit"
-        holders: [C_TOBIAS]
+        holders: [Char_D]
         reveal_rule:
           earliest_round: 2
           trigger: "Wenn jemand nach dem letzten Vertrags-/Testament-Update fragt"
-      - id: S_TOBIAS_2
-        summary: "Tobias war kurz vor dem Mord in der Bibliothek und hat dort etwas entnommen."
+      - id: S_Char_D_2
+        summary: "Char_D war kurz vor dem Mord in der Bibliothek, entnahm dort ein Schriftstück aus einer Mappe und verschwieg diesen Zugriff anschließend vollständig."
         stakes: "Verdacht als Täter / Vertuschung"
-        holders: [C_TOBIAS]
+        holders: [Char_D]
         reveal_rule:
           earliest_round: 3
-          trigger: "Wenn Tobias direkt nach seinem Aufenthaltsort zwischen 21:10 und 21:20 gefragt wird"
+          trigger: "Wenn Char_D direkt nach seinem Aufenthaltsort zwischen 21:10 und 21:20 gefragt wird"
     murder_context:
+      is_murder: true                 # Beispielhaft; in echten Daten genau eine Rolle auf true setzen
       motives:
-        - id: M_TOBIAS_1
+        - id: M_Char_D_1
           type: "schutz / vertuschung"
           strength: 2
-          rationale: "Opfer drohte, Tobias’ juristische Manipulation öffentlich zu machen."
+          rationale: "Das Opfer drohte, Char_D’ juristische Manipulation noch am selben Abend offenzulegen, was unmittelbare Ermittlungen und den Verlust seiner Zulassung auslösen konnte."
           supports_clues: []   # z.B. später: [K_DOC_X]
-        - id: M_TOBIAS_2
+        - id: M_Char_D_2
           type: "macht"
           strength: 1
-          rationale: "Ohne das Opfer verliert Tobias Einfluss; mit dem richtigen Dokument gewinnt er Kontrolle."
+          rationale: "Ohne das Opfer verliert Char_D seinen direkten Einflusskanal; mit dem richtigen Dokument könnte er zentrale Entscheidungen dennoch kontrollieren und seine Position sichern."
           supports_clues: []
       opportunities:
         access_level: "hoch"

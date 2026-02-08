@@ -1,10 +1,10 @@
 motives:
-  - id: M_ALMA_1
-    character: C_ALMA
+  - id: M_Char_A_1
+    character: Char_A
     type: "finanziell"
     strength: 3
     murder: true
-    description: "Opfer bedrohte Almas Existenz."
+    description: "Opfer bedrohte Char_As Existenz."
     clue_support:
       primary:            # belastende Kernhinweise (direkt, reliability typischerweise >=2)
         - clue_id: K_DOC_3
@@ -16,19 +16,19 @@ motives:
           weight: 2
     counter_clues:        # Hinweise, die Motiv relativieren / alternative Interpretation erlauben
       - clue_id: K_DOC_7
-        why: "Deutet an, dass Alma eine Rettungsoption hatte; senkt 'Notlage'-Motiv."
+        why: "Deutet an, dass Char_A eine Rettungsoption hatte; senkt 'Notlage'-Motiv."
         weight: 1
     narrative_notes:      # optional: wie dieses Motiv im Spiel 'gespielt' werden soll
       reveal_arc:
         earliest_round: 1
         peak_round: 3
-        intended_turn: "Vom 'finanziell gestresst' zum 'Opfer hatte Beweise gegen Alma'."
-  - id: M_VIKTOR_1
-    character: C_VIKTOR
+        intended_turn: "Vom 'finanziell gestresst' zum 'Opfer hatte Beweise gegen Char_A'."
+  - id: M_Char_B_1
+    character: Char_B
     type: "persoenlich"
     strength: 2
     murder: false
-    description: "Opfer wollte Viktors Betrug oeffentlich machen."
+    description: "Opfer wollte Char_Bs Betrug oeffentlich machen."
     clue_support:
       primary:
         - clue_id: K_MSG_4
@@ -36,11 +36,11 @@ motives:
           weight: 3
       secondary:
         - clue_id: K_WIT_5
-          why: "Zeuge bestaetigt angespanntes Verhalten von Viktor direkt vor der Tat."
+          why: "Zeuge bestaetigt angespanntes Verhalten von Char_B direkt vor der Tat."
           weight: 1
     counter_clues:
       - clue_id: K_DOC_9
-        why: "Unterlagen zeigen, dass Viktor bereits eine aussergerichtliche Einigung vorbereitet hatte."
+        why: "Unterlagen zeigen, dass Char_B bereits eine aussergerichtliche Einigung vorbereitet hatte."
         weight: 2
     narrative_notes:
       reveal_arc:

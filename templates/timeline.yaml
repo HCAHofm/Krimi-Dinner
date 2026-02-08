@@ -12,33 +12,33 @@ timeline:
 
   # KANONISCH: wer war wann wo
   presence:
-    - character: C_ALMA
+    - character: Char_A
       intervals:
-        - id: P_ALMA_1
+        - id: P_Char_A_1
           start: "21:00"
           end: "21:10"
           location: L_SALON
           certainty: certain
-        - id: P_ALMA_2
+        - id: P_Char_A_2
           start: "21:10"
           end: "21:25"
           location: L_WINTERGARTEN
           certainty: claimed
-          witness: C_NORA
+          witness: Char_C
 
-    - character: C_VIKTOR
+    - character: Char_B
       intervals:
-        - id: P_VIKTOR_1
+        - id: P_Char_B_1
           start: "21:00"
           end: "21:12"
           location: L_SALON
           certainty: certain
-        - id: P_VIKTOR_2
+        - id: P_Char_B_2
           start: "21:12"
           end: "21:20"
           location: L_UNKNOWN
           certainty: unknown
-        - id: P_VIKTOR_3
+        - id: P_Char_B_3
           start: "21:15"
           end: "21:18"
           location: L_BIBLIOTHEK
@@ -52,16 +52,16 @@ timeline:
       location: L_SALON
       visibility: public
       description: "Toast auf das Opfer."
-      presence_refs: [P_ALMA_1, P_VIKTOR_1]
+      presence_refs: [P_Char_A_1, P_Char_B_1]
 
     - id: B_2110_SPLIT
       time: "21:10"
       location: L_SALON
       visibility: public
-      description: "Alma und Nora verlassen gemeinsam den Salon."
+      description: "Char_A und Char_C verlassen gemeinsam den Salon."
       effects:
         - type: "starts_interval"
-          interval_id: P_ALMA_2
+          interval_id: P_Char_A_2
 
     - id: B_2130_DISCOVERY
       time: "21:30"
