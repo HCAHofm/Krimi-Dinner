@@ -1,0 +1,135 @@
+clues:
+  # --- Dokumente / physische Beweise ---
+  - id: K_DOC_3
+    type: document
+    title: "Mahnung und Kontoauszug"
+    description: "Zeigt, dass Alma akut unter finanziellem Druck steht und das Opfer als Glaeubiger/Blockierer auftaucht."
+    points_to:
+      suspects: [C_ALMA]
+      motives: [M_ALMA_1]
+    timeline_links:
+      related_beats: [B_2100_TOAST]
+    reliability: 3
+    discoverability:
+      holder: "GM"
+      location: L_BIBLIOTHEK
+      earliest_round: 2
+      method: "In einer Mappe im Sekretaer (Schublade klemmt leicht)."
+    knowledge:
+      initial_holders: []
+      public_when_revealed: false
+
+  - id: K_DOC_9
+    type: document
+    title: "Testamentsentwurf mit Versionsvermerk"
+    description: "Ein Entwurf mit handschriftlichen Aenderungen; der Versionsstempel passt zu Almas Buero-Schreibpapier."
+    points_to:
+      suspects: [C_ALMA]
+      motives: [M_ALMA_2]
+    timeline_links:
+      related_beats: [B_2110_SPLIT]
+    reliability: 2
+    discoverability:
+      holder: "location:L_BIBLIOTHEK"
+      location: L_BIBLIOTHEK
+      earliest_round: 3
+      method: "Hinter einem Buchumschlag versteckt; nur auffindbar, wenn jemand gezielt nach 'Papieren' sucht."
+    knowledge:
+      initial_holders: []
+      public_when_revealed: false
+
+  # --- Nachrichten / digitale Spuren ---
+  - id: K_MSG_1
+    type: digital
+    title: "Entwurf einer nie gesendeten Nachricht"
+    description: "Auf dem Tablet des Opfers: 'Wenn du heute Abend nicht gestehst, zeige ich alles.' (ohne Empfaengername)."
+    points_to:
+      suspects: [C_ALMA, C_TOBIAS]
+      motives: [M_ALMA_2]
+    timeline_links:
+      related_beats: [B_2100_TOAST]
+    reliability: 2
+    discoverability:
+      holder: "GM"
+      location: L_SALON
+      earliest_round: 1
+      method: "Tablet liegt im Salon; PIN wird durch eine Notiz am Tisch nahegelegt."
+    knowledge:
+      initial_holders: []
+      public_when_revealed: true
+
+  # --- Zeugenaussagen (gezielt spielbar, oft mehrdeutig) ---
+  - id: K_WIT_2
+    type: testimony
+    title: "Streit vor dem Essen"
+    description: "Eine Person hoerte Alma und das Opfer angespannt ueber Geld sprechen."
+    points_to:
+      suspects: [C_ALMA]
+      motives: [M_ALMA_1]
+    timeline_links:
+      related_beats: [B_2100_TOAST]
+    reliability: 2
+    discoverability:
+      holder: "role:C_NORA"
+      earliest_round: 1
+      method: "Nora erzaehlt es nur, wenn sie merkt, dass Alma verdaechtigt wird."
+    knowledge:
+      initial_holders: [C_NORA]
+      public_when_revealed: false
+
+  - id: K_WIT_4
+    type: testimony
+    title: "Almas 'ehrlich klaeren'-Satz"
+    description: "Kurz vor dem Mord sagte Alma sinngemaess: 'Heute wird alles endlich sauber.'"
+    points_to:
+      suspects: [C_ALMA]
+      motives: []
+    timeline_links:
+      related_beats: [B_2110_SPLIT]
+    reliability: 1
+    discoverability:
+      holder: "role:C_VIKTOR"
+      earliest_round: 2
+      method: "Viktor nutzt es als rhetorischen Angriff gegen Alma."
+    knowledge:
+      initial_holders: [C_VIKTOR]
+      public_when_revealed: true
+
+  # --- Spuren am Tatort / Methodenkette ---
+  - id: K_PHY_1
+    type: physical
+    title: "Tee-Fleck und Zuckerzange"
+    description: "In der Bibliothek: ein frischer Tee-Fleck am Rand des Beistelltisches; Zuckerzange klebt leicht."
+    points_to:
+      suspects: [C_TOBIAS, C_VIKTOR]
+      motives: []
+    timeline_links:
+      related_beats: [B_2130_DISCOVERY]
+    reliability: 2
+    discoverability:
+      holder: "location:L_BIBLIOTHEK"
+      location: L_BIBLIOTHEK
+      earliest_round: 2
+      method: "Beim Untersuchen des Tatorts (sichtbar, aber Bedeutung muss interpretiert werden)."
+    knowledge:
+      initial_holders: []
+      public_when_revealed: true
+
+  # --- Gegenhinweise (entkraeften / alternative Erklaerungen) ---
+  - id: K_DOC_7
+    type: document
+    title: "Unterschriftsbereite Kreditlinie"
+    description: "Eine Bankzusage, die Almas finanzielle Lage kurzfristig haette stabilisieren koennen."
+    points_to:
+      suspects: []
+      motives: [M_ALMA_1]
+    timeline_links:
+      related_beats: [B_2100_TOAST]
+    reliability: 2
+    discoverability:
+      holder: "role:C_TOBIAS"
+      earliest_round: 2
+      method: "Tobias hat sie in seinen Unterlagen; er gibt sie nur heraus, wenn es ihm taktisch nuetzt."
+    knowledge:
+      initial_holders: [C_TOBIAS]
+      public_when_revealed: false

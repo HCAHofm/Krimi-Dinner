@@ -1,0 +1,70 @@
+timeline:
+  meta:
+    date: "2025-02-14"
+    time_format: "HH:MM"
+    locations: [L_SALON, L_KUECHE, L_BIBLIOTHEK, L_WINTERGARTEN]
+
+  murder:
+    time: "21:17"
+    location: L_BIBLIOTHEK
+    method_id: METHOD_POISON_TEA
+    discovered_at: "21:30"
+
+  # KANONISCH: wer war wann wo
+  presence:
+    - character: C_ALMA
+      intervals:
+        - id: P_ALMA_1
+          start: "21:00"
+          end: "21:10"
+          location: L_SALON
+          certainty: certain
+        - id: P_ALMA_2
+          start: "21:10"
+          end: "21:25"
+          location: L_WINTERGARTEN
+          certainty: claimed
+          witness: C_NORA
+
+    - character: C_VIKTOR
+      intervals:
+        - id: P_VIKTOR_1
+          start: "21:00"
+          end: "21:12"
+          location: L_SALON
+          certainty: certain
+        - id: P_VIKTOR_2
+          start: "21:12"
+          end: "21:20"
+          location: L_UNKNOWN
+          certainty: unknown
+        - id: P_VIKTOR_3
+          start: "21:15"
+          end: "21:18"
+          location: L_BIBLIOTHEK
+          certainty: hidden
+  # Ereignisse mit Zeit, Ort, Beschreibung, beteiligten Charakteren (für Dramaturgie, Hinweise, Alibis)
+  # WICHTIG: beat.id ist die Referenz für clues.timeline_links.related_beats in story/clues.yaml.
+  # Wenn clues zuerst erstellt wurden, müssen alle dort referenzierten Beat-IDs hier exakt vorkommen.
+  beats:
+    - id: B_2100_TOAST
+      time: "21:00"
+      location: L_SALON
+      visibility: public
+      description: "Toast auf das Opfer."
+      presence_refs: [P_ALMA_1, P_VIKTOR_1]
+
+    - id: B_2110_SPLIT
+      time: "21:10"
+      location: L_SALON
+      visibility: public
+      description: "Alma und Nora verlassen gemeinsam den Salon."
+      effects:
+        - type: "starts_interval"
+          interval_id: P_ALMA_2
+
+    - id: B_2130_DISCOVERY
+      time: "21:30"
+      location: L_BIBLIOTHEK
+      visibility: public
+      description: "Leiche wird entdeckt."

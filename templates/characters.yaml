@@ -37,11 +37,6 @@ characters:
       opportunities:
         access_level: "mittel"        # niedrig/mittel/hoch
         constraints: "War zwischen 21:10-21:20 unbeobachtet."
-      alibi:
-        claim: "Mit Nora im Wintergarten."
-        window: { start: "21:05", end: "21:25" }
-        witnesses: [C_NORA]
-        strength: 2                   # 1..3
   - id: C_TOBIAS
     name: "Tobias Lennert"
     public_description: "Anwalt des Opfers, geschniegelt, wirkt hilfsbereit, beantwortet Fragen oft mit Gegenfragen."
@@ -95,8 +90,3 @@ characters:
       opportunities:
         access_level: "hoch"
         constraints: "Hat plausiblen Grund, sich frei im Haus zu bewegen; kann unauffällig Dokumente erreichen."
-      alibi:
-        claim: "Telefonat im Flur wegen eines 'Notfalls' in einer Kanzleisache."
-        window: { start: "21:12", end: "21:20" }
-        witnesses: []          # bewusst schwach
-        strength: 1

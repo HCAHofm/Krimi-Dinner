@@ -1,0 +1,10 @@
+locations:
+  - id: L_BIBLIOTHEK
+    name: "Bibliothek"
+    access: "alle"
+  - id: L_SALON
+    name: "Salon"
+    access: "alle"
+  - id: L_ARBEITSZIMMER
+    name: "Arbeitszimmer"
+    access: "nur_mit_schluessel"

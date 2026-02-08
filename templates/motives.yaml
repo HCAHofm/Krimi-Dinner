@@ -1,0 +1,49 @@
+motives:
+  - id: M_ALMA_1
+    character: C_ALMA
+    type: "finanziell"
+    strength: 3
+    murder: true
+    description: "Opfer bedrohte Almas Existenz."
+    clue_support:
+      primary:            # belastende Kernhinweise (direkt, reliability typischerweise >=2)
+        - clue_id: K_DOC_3
+          why: "Dokument zeigt akuten finanziellen Druck und direkten Konflikt mit dem Opfer."
+          weight: 3       # 1..3
+      secondary:          # indirekte Hinweise (Kontext, Verhalten, Umstände)
+        - clue_id: K_WIT_2
+          why: "Zeugenaussage über heftigen Streit kurz vor dem Mord."
+          weight: 2
+    counter_clues:        # Hinweise, die Motiv relativieren / alternative Interpretation erlauben
+      - clue_id: K_DOC_7
+        why: "Deutet an, dass Alma eine Rettungsoption hatte; senkt 'Notlage'-Motiv."
+        weight: 1
+    narrative_notes:      # optional: wie dieses Motiv im Spiel 'gespielt' werden soll
+      reveal_arc:
+        earliest_round: 1
+        peak_round: 3
+        intended_turn: "Vom 'finanziell gestresst' zum 'Opfer hatte Beweise gegen Alma'."
+  - id: M_VIKTOR_1
+    character: C_VIKTOR
+    type: "persoenlich"
+    strength: 2
+    murder: false
+    description: "Opfer wollte Viktors Betrug oeffentlich machen."
+    clue_support:
+      primary:
+        - clue_id: K_MSG_4
+          why: "Nachricht enthaelt eine konkrete Drohung des Opfers, alles publik zu machen."
+          weight: 3
+      secondary:
+        - clue_id: K_WIT_5
+          why: "Zeuge bestaetigt angespanntes Verhalten von Viktor direkt vor der Tat."
+          weight: 1
+    counter_clues:
+      - clue_id: K_DOC_9
+        why: "Unterlagen zeigen, dass Viktor bereits eine aussergerichtliche Einigung vorbereitet hatte."
+        weight: 2
+    narrative_notes:
+      reveal_arc:
+        earliest_round: 2
+        peak_round: 4
+        intended_turn: "Vom 'gekränkten Geschäftspartner' zum 'massiv unter Druck gesetzten Verdächtigen'."
