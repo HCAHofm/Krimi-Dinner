@@ -1,0 +1,21 @@
+min_clues_per_motive: 2
+min_incriminating_per_suspect: 1
+min_non_incriminating_per_suspect: 1
+
+beat_cluster_ratio_warn: 0.35
+exact_beat_overlap_warn_count: 3
+
+max_suspects_per_clue: 2
+max_motives_per_clue: 2
+max_targets_total_per_clue: 3
+
+testimony_warn_max_reliability: 2
+testimony_hard_conclusion_keywords:
+  - "beweist"
+  - "eindeutig"
+  - "sicher"
+  - "zweifelsfrei"
+  - "definitiv"
+  - "ohne zweifel"
+
+results_output_path: "reports/validate_case_results.txt"
