@@ -65,6 +65,7 @@
    * Die Storyline MUSS in Schritt 2 mindestens festlegen: Setting, Opfer, genau 4 verdächtige Rollen, Kerntat (Tatort, ungefähres Tatzeitfenster, Anlass) und 6-Akt-Struktur.
    * In Schritt 2 dürfen noch keine harten Referenzen auf nicht existierende IDs aus späteren Dateien vorausgesetzt werden (z.B. `M_*`, `K_*`, `B_*`, `L_*`), außer sie werden ausdrücklich als vorläufige Plan-IDs gekennzeichnet.
    * Pro verdächtiger Rolle MUSS die Storyline bereits ein plausibles Motiv, ein belastbares Geheimnis und eine Gelegenheit auf Erzählebene enthalten (noch ohne YAML-Detailtiefe).
+   * Im Ablauf des Abends darf es kein gemeinsames Essen geben, da ja bei einem Krimi Dinner während der Lösung des falls gegessen wird.
    * Nach Erstellung von Character/Motive/Clues/Timeline (Schritte 3-7) MUSS jeweils ein Pflichtabgleich erfolgen: Es wird eine neue Datei `story/storyline_v<Nummer_des_Schritts>`, die an die finalen Fakten angepasst ist erstellt, bis keine Widersprüche mehr bestehen.
    * Bei Konflikten zwischen früher Storyline-Annahme und späteren Strukturdaten gilt: Konflikt aktiv auflösen (durch konsistente Anpassung), niemals widersprüchliche Versionen parallel stehen lassen.
 * Für jede Rolle muss ein Charakterblatt mit Eigenschaften, Geheimnissen, Mordmotiv und Alibi vorliegen.
@@ -74,7 +75,7 @@
    * Bei der Kreation eines Spiels muss unter `story/character.yaml` eine Datei mit den Charakteren des Spiels nach dem Vorbild von [`templates/characters.yaml`](templates/characters.yaml) erstellt werden.【F:templates/characters.yaml.
    * **Die Motive und Gründe für Geheimnisse müssen konkret, nachvollziehbar und logisch sein**. Es dürfen nie unkonkrete Personen oder Motive ohne Begründung vorkommen.
    * Wenn in `story/character.yaml` das Mordopfer genannt wird, soll es IMMER C_O_<Name des Opfers> heißen.
-   * Alibis dürfen nicht so zu entkräften sein, z.B. NIEMALS Charakter 1 behauptet er sei mit Charakter 2 zusammengewesen und CHarakter 2 war nicht dort.
+   * Alibis dürfen nicht zu leicht zu entkräften sein, z.B. NIEMALS Charakter 1 behauptet er sei mit Charakter 2 zusammengewesen und CHarakter 2 war nicht dort.
    * Es MUSS einen Eintrag für C_O_<Name des Opfers> geben. Motive und Alibis werden für diesen EIntrag nicht erstellt
    * Die Orte müssen Anhand von location_ID referenziert werden
    * Jede Charakter-ID MUSS eindeutig sein; alle Referenzen in `relationships.with`, `secrets.holders` und Alibi-Zeugen müssen auf existierende Charaktere zeigen.
@@ -98,6 +99,7 @@
    * Jede `clue.id` MUSS eindeutig sein.
    * Pro Clue MUSS `timeline_links.related_beats` mindestens einen Beat/Event enthalten.
    * `points_to.suspects` MUSS nur existierende Charakter-IDs referenzieren; `points_to.motives` MUSS nur existierende Motiv-IDs aus `story/motives.yaml` referenzieren.
+   * Zu jedem Motiv MUSS es mindestens zwei Clues geben.
    * `reliability` MUSS im Bereich 1 bis 3 liegen.
    * `discoverability.earliest_round` MUSS im Bereich 1..4 liegen und zur geplanten Dramaturgie passen (`knowledge.initial_holders` und Freigabelogik dürfen dem nicht widersprechen).
    * `knowledge.initial_holders` MUSS nur existierende Charakter-IDs enthalten; bei `public_when_revealed: true` darf der Hinweis nach Offenlegung nicht als exklusives Rollenwissen behandelt werden.
