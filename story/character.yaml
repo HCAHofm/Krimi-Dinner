@@ -1,253 +1,253 @@
 characters:
-  - id: C_MARCO_STEINER
-    name: "Marco Steiner"
-    role: "Bergfuehrer und ehemaliger Leiter der Jugendtouren"
-    public_description: "Routiniert, koerperlich praesent, kennt die Hochkamm-Lodge bis ins Detail."
+  - id: Char_A
+    name: "Jonas Reiter"
+    public_description: "Bergfuehrer der Huette, kennt jede Route und wirkt nach aussen ruhig und praktisch."
     traits:
-      - "praezise"
-      - "durchsetzungsstark"
+      - "pflichtbewusst"
+      - "direkt"
+      - "kontrollierend"
+    goals:
+      public_goal: "Die Gruppe in der eingeschneiten Huette zusammenhalten und jede Panik vermeiden."
+      private_goal: "Verhindern, dass alte Vertuschungsspuren und seine aktuellen Regelverstoesse bekannt werden."
+    relationships:
+      - with: Char_B
+        type: "fruehere_freundschaft"
+        valence: -1
+        notes: "Sie kennen sich seit Jugendtagen, vertrauen sich aber nicht mehr."
+      - with: Char_C
+        type: "zweckbuendnis"
+        valence: +1
+        notes: "Beide deckten sich nach dem alten Unfall gegenseitig."
+      - with: Char_Moerder
+        type: "abhaengigkeit"
+        valence: -2
+        notes: "Politische Kontakte von Char_Moerder schuetzten Jonas frueher indirekt."
+      - with: Char_Opfer
+        type: "konflikt"
+        valence: -3
+        notes: "Char_Opfer drohte mit einem Audio-Beweis, der Jonas belastet."
+    secrets:
+      - id: S_Char_A_1
+        summary: "Jonas manipulierte in den letzten Wochen Notfallprotokolle, um illegale Wintertouren zu vertuschen."
+        stakes: "Berufsverbot und Strafverfahren wegen Fahrlaessigkeit."
+        holders: [Char_A]
+        reveal_rule:
+          earliest_round: 2
+          trigger: "Wenn die Gruppe ueber Sicherheitsausruestung und Protokolle diskutiert."
+    alibi:
+      location_id: L_SALON
+      window:
+        start: "22:34"
+        end: "22:42"
+      witnesses: [Char_B]
+      statement: "War im Salon beim Kamin und sichtete mit Char_B die Sturmwarnungen auf einem Akkuradio."
+    murder_context:
+      is_murder: false
+      motives:
+        - id: M_Char_A_1
+          type: "schutz_vertuschung"
+          strength: 3
+          rationale: "Die Offenlegung des Audio-Protokolls haette Jonas beruflich und strafrechtlich sofort zu Fall gebracht."
+          supports_clues: []
+      opportunities:
+        access_level: "hoch"
+        constraints: "Kennt den Waffenraum und die Wege im Nordfluegel; war zeitweise nur von Char_B gesehen."
+
+  - id: Char_B
+    name: "Mara Feldmann"
+    public_description: "Unternehmerin mit starkem Auftreten, gewohnt Entscheidungen zu dominieren."
+    traits:
+      - "rhetorisch_stark"
+      - "risikobereit"
       - "misstrauisch"
     goals:
-      public_goal: "Die Nacht geordnet halten und Panik vermeiden."
-      private_goal: "Verhindern, dass seine alte Seil-Freigabe publik wird."
+      public_goal: "Die Lage kontrollieren und den Abend ohne oeffentlichen Skandal beenden."
+      private_goal: "Verhindern, dass alte Zahlungen und aktuelle Schattenkonten mit der Vertuschung verknuepft werden."
     relationships:
-      - with: C_HELENE_FALK
-        type: "zweckbuendnis"
-        valence: +1
-        notes: "Beide wollen den Altfall unter Kontrolle halten."
-      - with: C_DR_LEONIE_WINTER
-        type: "schuldgemeinschaft"
-        valence: +2
-        notes: "Leonie deckte Marcos Fehler nach dem Unfall."
-      - with: C_GREGOR_VOSS
-        type: "rivalitaet"
-        valence: -2
-        notes: "Marco haelt Gregor fuer den Hauptverantwortlichen der damaligen Vertuschung."
-      - with: C_O_ELIAS_REUTER
-        type: "konflikt"
-        valence: -3
-        notes: "Elias drohte mit Strafanzeige und Medienkontakt."
-    secrets:
-      - id: S_MARCO_1
-        summary: "Marco hat das beschaedigte Sicherungsseil damals trotzdem als einsatzbereit protokolliert."
-        stakes: "Fahrlassige Toetung, Haft, Verlust aller Lizenzen"
-        holders: [C_MARCO_STEINER]
-        reveal_rule:
-          earliest_round: 2
-          trigger: "Wenn nach dem technischen Zustand der Ausruestung von damals gefragt wird."
-    alibi:
-      window:
-        start: "20:48"
-        end: "21:04"
-      location: L_TECHNIKRAUM
-      witness: [C_DR_LEONIE_WINTER]
-      statement: "Marco sagt, er habe den Notstrom geprueft und deshalb Schussgeraeusche erst verspaetet wahrgenommen."
-      weaknesses:
-        - "Leonie bestaetigt ihn nur bis etwa 20:58, danach war Marco kurz allein."
-        - "Vom Technikraum gibt es keine zeitgestempelte Aufzeichnung."
-    murder_context:
-      motives:
-        - id: M_MARCO_1
-          type: "vertuschung"
-          strength: 3
-          rationale: "Elias konnte Marcos Freigabe-Protokoll dem damaligen Tod direkt zuordnen."
-      opportunities:
-        access_level: "hoch"
-        constraints: "Kurze unbeobachtete Luecke unmittelbar vor dem Schuss."
-
-  - id: C_HELENE_FALK
-    name: "Helene Falk"
-    role: "Unternehmerin und ehemalige Gruenderin eines Outdoor-Startups"
-    public_description: "Souveraen, strategisch, wirkt in Konflikten kontrolliert."
-    traits:
-      - "eloquent"
-      - "ehrgeizig"
-      - "risikobereit"
-    goals:
-      public_goal: "Eine gemeinsame, ruhige Loesung ohne Polizei erreichen."
-      private_goal: "Finanzspuren verschwinden lassen, bevor Elias sie veroeffentlicht."
-    relationships:
-      - with: C_MARCO_STEINER
-        type: "zweckbuendnis"
-        valence: +1
-        notes: "Helene braucht Marcos Loyalitaet, um den Altfall geschlossen zu halten."
-      - with: C_DR_LEONIE_WINTER
-        type: "misstrauen"
+      - with: Char_A
+        type: "fruehere_freundschaft"
         valence: -1
-        notes: "Leonie kennt Helenes damalige Scheinabrechnungen."
-      - with: C_GREGOR_VOSS
-        type: "geheime_geschaefte"
-        valence: -2
-        notes: "Helene finanzierte indirekt Gregors fruehe Kampagne ueber Tarnrechnungen."
-      - with: C_O_ELIAS_REUTER
-        type: "konflikt"
+        notes: "Mara haelt Jonas fuer unzuverlaessig unter Druck."
+      - with: Char_C
+        type: "instrumentell"
+        valence: +1
+        notes: "Mara suchte frueher medizinische Rueckendeckung von Char_C."
+      - with: Char_Moerder
+        type: "politisch_geschaeftlich"
+        valence: +2
+        notes: "Beide profitierten von gegenseitiger Einflussnahme."
+      - with: Char_Opfer
+        type: "erpressung"
         valence: -3
-        notes: "Elias drohte, Unterlagen zu ihren Zahlungen weiterzugeben."
+        notes: "Char_Opfer forderte hohes Schweigegeld und drohte mit Finanzunterlagen."
     secrets:
-      - id: S_HELENE_1
-        summary: "Helene leitete nach dem Unfall Vereinsgeld ueber Scheinrechnungen um, um Schweigegeld zu finanzieren."
-        stakes: "Bilanzbetrug, Unternehmensruin, persoenliche Haftung"
-        holders: [C_HELENE_FALK]
+      - id: S_Char_B_1
+        summary: "Mara fuehrte verdeckte Schattenkonten ueber Strohleute zur Verschleierung alter und neuer Geldfluesse."
+        stakes: "Firmenkollaps, Ermittlungen wegen Bilanz- und Steuerdelikten."
+        holders: [Char_B]
         reveal_rule:
           earliest_round: 2
-          trigger: "Wenn nach den Kosten der damaligen Nacht und fehlenden Belegen gefragt wird."
+          trigger: "Wenn Zahlungen rund um den alten Unfall oder die aktuelle Erpressung Thema werden."
     alibi:
+      location_id: L_SALON
       window:
-        start: "20:50"
-        end: "21:05"
-      location: L_SALON
-      witness: [C_GREGOR_VOSS]
-      statement: "Helene gibt an, sie habe im Salon Unterlagen sortiert und Gregor habe sie dort mehrfach gesehen."
-      weaknesses:
-        - "Gregor bestaetigt den Aufenthalt nur bis kurz nach 21:00."
-        - "Vom Salon zum Arbeitszimmer sind nur wenige Schritte ueber den oberen Gang."
+        start: "22:33"
+        end: "22:39"
+      witnesses: [Char_A]
+      statement: "War mit Char_A im Salon; verliess den Raum danach kurz Richtung Gaestezimmer, um einen Aktenordner zu holen."
     murder_context:
+      is_murder: false
       motives:
-        - id: M_HELENE_1
-          type: "finanziell"
-          strength: 2
-          rationale: "Ein oeffentlicher Skandal haette Helenes Firma und Kreditlinien sofort zerstoert."
+        - id: M_Char_B_1
+          type: "finanziell_vertuschung"
+          strength: 3
+          rationale: "Eine sofortige Offenlegung der Zahlungsunterlagen haette Mara privat und beruflich sofort ruiniert."
+          supports_clues: []
       opportunities:
         access_level: "mittel"
-        constraints: "Hatte waehrend des Stromflackerns Bewegungsfreiheit zwischen Salon und Gang."
+        constraints: "Hatte ein kurzes unbeobachtetes Zeitfenster beim Gang Richtung Gaestezimmer."
 
-  - id: C_DR_LEONIE_WINTER
-    name: "Dr. Leonie Winter"
-    role: "Unfallchirurgin, damals Medizinstudentin der Gruppe"
-    public_description: "Sachlich, ruhig, medizinisch autoritaer, reagiert auf Druck defensiv."
+  - id: Char_C
+    name: "Dr. Elena Weiss"
+    public_description: "Notfallaerztin, sachlich und beruhigend, reagiert auf Stress mit professioneller Distanz."
     traits:
       - "analytisch"
-      - "kontrolliert"
-      - "konfliktscheu"
+      - "beherrscht"
+      - "verschlossen"
     goals:
-      public_goal: "Die Lage medizinisch und psychologisch stabil halten."
-      private_goal: "Verhindern, dass ihr damaliges Fehlverhalten beruflich bekannt wird."
+      public_goal: "Als Medizinerin Ordnung in die Situation bringen und ueberhastete Anschuldigungen bremsen."
+      private_goal: "Verhindern, dass fruehere Falschangaben und undokumentierte Behandlungen publik werden."
     relationships:
-      - with: C_MARCO_STEINER
-        type: "schuldgemeinschaft"
-        valence: +2
-        notes: "Leonie und Marco stuetzten sich bei der damaligen Aussage."
-      - with: C_HELENE_FALK
-        type: "distanzierte_freundschaft"
+      - with: Char_A
+        type: "zweckbuendnis"
+        valence: +1
+        notes: "Beide schirmten sich nach dem Unfall gegenseitig."
+      - with: Char_B
+        type: "distanzierte_kooperation"
         valence: 0
-        notes: "Leonie haelt Helene fuer berechnend, blieb aber aus Eigeninteresse loyal."
-      - with: C_GREGOR_VOSS
+        notes: "Char_B suchte wiederholt medizinische Rueckendeckung, Char_C blieb reserviert."
+      - with: Char_Moerder
         type: "misstrauen"
+        valence: -1
+        notes: "Char_C vermutet bei Char_Moerder seit Jahren Einflussnahme auf Behoerdenkontakte."
+      - with: Char_Opfer
+        type: "konflikt"
         valence: -2
-        notes: "Gregor drueckte damals auf eine politisch guenstige Version des Unfalls."
-      - with: C_O_ELIAS_REUTER
-        type: "scham"
-        valence: -2
-        notes: "Leonie wusste, dass Elias Antworten suchte, wich ihm aber jahrelang aus."
+        notes: "Char_Opfer drohte mit alten Unterlagen zu ihren damaligen Aussagen."
     secrets:
-      - id: S_LEONIE_1
-        summary: "Leonie vermerkte im alten Notizbuch eine falsche Erstversorgung, um eigenes Zoegern zu verdecken."
-        stakes: "Berufsrechtliche Konsequenzen, Approbationsverlust, Strafverfahren"
-        holders: [C_DR_LEONIE_WINTER]
+      - id: S_Char_C_1
+        summary: "Elena dokumentierte mehrere private Notfallbehandlungen absichtlich nicht und ist damit berufsrechtlich angreifbar."
+        stakes: "Approbationsrisiko und strafrechtliche Ermittlung wegen Dokumentationspflichtverletzung."
+        holders: [Char_C]
         reveal_rule:
           earliest_round: 3
-          trigger: "Wenn konkrete Fragen zur Erstversorgung und zum Zeitpunkt des Notrufs gestellt werden."
+          trigger: "Wenn medizinische Unterlagen und ihre Aussagen aus der Unfallnacht gegengeprueft werden."
     alibi:
+      location_id: L_ARBEITSRAUM
       window:
-        start: "20:52"
-        end: "21:03"
-      location: L_SCHLAFZIMMER_UNTEN
-      witness: [C_MARCO_STEINER]
-      statement: "Leonie sagt, sie habe im unteren Schlafzimmer ein Notfallset gesucht und Schmerzmittel fuer Elias vorbereitet."
-      weaknesses:
-        - "Marco kann nur bestaetigen, dass Leonie kurz davor aus dem Technikraum kam."
-        - "Zwischen 21:03 und Schusszeit ist Leonies Weg nicht vollstaendig belegt."
+        start: "22:28"
+        end: "22:34"
+      witnesses: [Char_Opfer]
+      statement: "Untersuchte Char_Opfer kurz wegen angeblicher Herzbeschwerden und ging danach in den Verbindungsgang."
     murder_context:
+      is_murder: false
       motives:
-        - id: M_LEONIE_1
-          type: "selbstschutz"
+        - id: M_Char_C_1
+          type: "berufsschutz"
           strength: 2
-          rationale: "Elias wollte ihre damalige Dokumentation und spaetere Falschaussage publik machen."
+          rationale: "Die alten Unterlagen koennten belegen, dass Elena den Verletzungsgrad absichtlich herunterspielte."
+          supports_clues: []
       opportunities:
         access_level: "mittel"
-        constraints: "War in der kritischen Phase nicht durchgehend beobachtet."
+        constraints: "War kurz vor der Tat im Bereich des Tatorts, stand danach aber im Verbindungsgang im Sichtfeld anderer."
 
-  - id: C_GREGOR_VOSS
-    name: "Gregor Voss"
-    role: "Lokalpolitiker und Kandidat fuer ein Landesamt"
-    public_description: "Sicher auftretend, rhetorisch stark, gewohnt andere zu steuern."
+  - id: Char_Moerder
+    name: "Robert Kael"
+    public_description: "Lokalpolitiker im Wahlkampf, verbindlich im Ton und geuebt im schnellen Umdeuten von Vorwuerfen."
     traits:
       - "charismatisch"
-      - "manipulativ"
-      - "entscheidungsfreudig"
+      - "strategisch"
+      - "kaltbluetig"
     goals:
-      public_goal: "Das Treffen ohne oeffentlichen Eklat bis zum Morgen ueberstehen."
-      private_goal: "Alle Spuren seiner spaeteren Aktenmanipulation beseitigen."
+      public_goal: "Die Gruppe zur Ruhe bringen und eine geordnete Aufklaerung nach aussen signalisieren."
+      private_goal: "Jeden Nachweis seiner damaligen Fahrerrolle und seiner aktuellen Aktenmanipulation sichern oder beseitigen."
     relationships:
-      - with: C_MARCO_STEINER
-        type: "rivalitaet"
-        valence: -2
-        notes: "Gregor betrachtet Marco als unkalkulierbares Risiko."
-      - with: C_HELENE_FALK
-        type: "geheime_geschaefte"
-        valence: -2
-        notes: "Helene kennt Gregors inoffizielle Finanzierung aus der Vergangenheit."
-      - with: C_DR_LEONIE_WINTER
-        type: "instrumentalisierung"
+      - with: Char_A
+        type: "politischer_nutzen"
         valence: -1
-        notes: "Gregor nutzte Leonies fachliche Unsicherheit fuer die alte Erzaehlung."
-      - with: C_O_ELIAS_REUTER
-        type: "offene_feindschaft"
+        notes: "Char_A profitierte frueher indirekt von Roberts Kontakten."
+      - with: Char_B
+        type: "geschaeftlich"
+        valence: +2
+        notes: "Char_B und Robert unterstuetzten sich bei lokalen Projekten."
+      - with: Char_C
+        type: "spannung"
+        valence: -1
+        notes: "Char_C traute Roberts Darstellung der Vergangenheit nie ganz."
+      - with: Char_Opfer
+        type: "existenzielle_bedrohung"
         valence: -3
-        notes: "Elias kuendigte an, Gregors spaetere Akteneingriffe noch in derselben Nacht zu beweisen."
+        notes: "Char_Opfer wollte in derselben Nacht Beweise gegen Robert uebergeben."
     secrets:
-      - id: S_GREGOR_1
-        summary: "Gregor veranlasste Jahre spaeter die Entfernung belastender Vermerke aus einem Kreisarchiv."
-        stakes: "Ende der politischen Karriere, Strafverfahren wegen Beweismittelunterdrueckung"
-        holders: [C_GREGOR_VOSS]
+      - id: S_Char_M_1
+        summary: "Robert liess ueber Amtskontakte Ermittlungsakten zur alten Unfallnacht unrechtmaessig einsehen und beeinflussen."
+        stakes: "Karriereende, Amtsverlust, Ermittlungen wegen Amtsmissbrauchs."
+        holders: [Char_Moerder]
         reveal_rule:
-          earliest_round: 1
-          trigger: "Wenn nach dem Verbleib der Originalakten oder politischen Kontakten in der Behoerde gefragt wird."
+          earliest_round: 2
+          trigger: "Wenn gefragt wird, woher Robert Details aus gesperrten Akten kennt."
     alibi:
+      location_id: L_TECHNIKRAUM
       window:
-        start: "20:49"
-        end: "21:05"
-      location: L_EINGANGSBEREICH
-      witness: [C_HELENE_FALK]
-      statement: "Gregor behauptet, er habe am Schluesselbrett wegen Funkempfangs telefoniert und den Flur beobachtet."
-      weaknesses:
-        - "Helene sah Gregor nur wiederholt, aber nicht durchgehend."
-        - "Der Standort liegt direkt bei Schluesselbrett und Zugang zum oberen Gang."
+        start: "22:36"
+        end: "22:44"
+      witnesses: [Char_A, Char_B]
+      statement: "Behauptet, waehrend des Stromausfalls durchgehend im Technikraum gewesen zu sein, um Sicherungen zu pruefen."
     murder_context:
+      is_murder: true
       motives:
-        - id: M_GREGOR_1
-          type: "macht_und_vertuschung"
+        - id: M_Char_M_1
+          type: "macht_erhalt_vertuschung"
           strength: 3
-          rationale: "Elias hatte ein zweites Dossier zur spaeteren Aktenmanipulation durch Gregor."
+          rationale: "Die geplante Beweisuebergabe haette Roberts Rolle als damaliger Fahrer und heutige Aktenmanipulation sofort offengelegt."
+          supports_clues: []
       opportunities:
         access_level: "hoch"
-        constraints: "Naehe zu Schluesselbrett und kurzer unbeobachteter Zugang zum Arbeitszimmer."
+        constraints: "Nutzte den Stromausfall als Vorwand, loeste sich unbeobachtet und erreichte den Arbeitsraum ueber den Verbindungsgang."
 
-  - id: C_O_ELIAS_REUTER
-    name: "Elias Reuter"
-    role: "Opfer; Bruder von Jonas Reuter"
-    public_description: "Hartnaeckig, vorbereitet und moralisch kompromisslos in der Aufarbeitung des alten Falls."
+  - id: Char_Opfer
+    name: "Levin Dorn"
+    public_description: "Frueherer Unfallzeuge, wirkte lange angepasst und trat nun mit belastenden Belegen offensiv auf."
     traits:
-      - "zielstrebig"
+      - "beharrlich"
+      - "angespannt"
       - "provokativ"
-      - "hartnaeckig"
     goals:
-      public_goal: "Ein schriftliches Gestaendnis aller vier Verdaechtigen erzwingen."
-      private_goal: "Das zweite Dossier sichern und bei weiterer Vertuschung sofort versenden."
+      public_goal: "Die Wahrheit ueber den damaligen Unfall offenlegen."
+      private_goal: "Die Gruppe zu klaren Zugestaendnissen und Konsequenzen zwingen, bevor Beweise aus der Hand gehen."
     relationships:
-      - with: C_MARCO_STEINER
-        type: "anklage"
+      - with: Char_A
+        type: "druck"
         valence: -3
-        notes: "Hielt Marco fuer denjenigen, der das Risiko am Berg bewusst akzeptierte."
-      - with: C_HELENE_FALK
-        type: "druckmittel"
+        notes: "Konfrontierte Char_A direkt mit Audio-Material."
+      - with: Char_B
+        type: "erpressung"
         valence: -3
-        notes: "Kann finanzielle Vertuschung ueber Unterlagen belegen."
-      - with: C_DR_LEONIE_WINTER
-        type: "enttaeuschung"
+        notes: "Forderte Geld gegen Aufschub der Veroeffentlichung."
+      - with: Char_C
+        type: "vorwurf"
         valence: -2
-        notes: "Erwartete als Medizinerin von Leonie eine wahrheitsgemaesse Aussage."
-      - with: C_GREGOR_VOSS
-        type: "feindschaft"
+        notes: "Warf Char_C unvollstaendige Aussagen zur Unfallnacht vor."
+      - with: Char_Moerder
+        type: "beweisdrohung"
         valence: -3
-        notes: "Sah in Gregor den Architekten der spaeteren Aktenmanipulation."
+        notes: "Wollte belastende Unterlagen gegen Char_Moerder noch in derselben Nacht uebergeben."
+    secrets:
+      - id: S_Char_O_1
+        summary: "Levin war jahrelang still, weil er selbst wegen eines frueheren Nebendelikts erpressbar war."
+        stakes: "Verlust der Glaubwuerdigkeit und eigene Strafverfolgung."
+        holders: [Char_Opfer]
+        reveal_rule:
+          earliest_round: 4
+          trigger: "Wenn nach dem Grund fuer sein langes Schweigen gefragt wird."
+

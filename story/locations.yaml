@@ -1,25 +1,20 @@
 locations:
-  - id: L_EINGANGSBEREICH
-    name: "Eingangsbereich / Schluesselbrett"
-    access: "alle"
-  - id: L_SPEISESAAL
-    name: "Speisesaal"
-    access: "alle"
   - id: L_SALON
-    name: "Salon mit Kamin"
+    name: "Salon"
     access: "alle"
-  - id: L_OBERER_GANG
-    name: "Oberer Gang"
+  - id: L_ARBEITSRAUM
+    name: "Arbeitsraum Nordfluegel"
     access: "alle"
-  - id: L_ARBEITSZIMMER
-    name: "Arbeitszimmer"
-    access: "nur_mit_schluessel"
+  - id: L_VERBINDUNGSGANG
+    name: "Verbindungsgang Nordfluegel"
+    access: "alle"
   - id: L_TECHNIKRAUM
-    name: "Technikraum / Notstrom"
+    name: "Technikraum"
+    access: "nur_personal"
+  - id: L_WAFFENRAUM
+    name: "Waffenraum"
+    access: "nur_mit_schluessel"
+  - id: L_GAESTEZIMMER
+    name: "Gaestezimmer"
     access: "alle"
-  - id: L_SCHLAFZIMMER_UNTEN
-    name: "Schlafzimmer unten"
-    access: "alle"
-  - id: L_SCHLAFZIMMER_OBEN
-    name: "Schlafzimmer oben"
-    access: "alle"
+
