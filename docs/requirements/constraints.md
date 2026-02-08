@@ -14,16 +14,13 @@
 * Für jede Rolle existieren pro Hinweisrunde passende Hinweise oder Gerüchte gemäß Ablaufstruktur.
 * Pflicht-Hinweise decken Tatablauf, Motiv und Gelegenheit ab; ohne sie ist die Auflösung nicht erreichbar.
 * Hinweise sind rollenexklusiv: Nur die Rolle, die den Hinweis erhält, kennt ihn zu Beginn.
-* Täter:in erhält keine Hinweise, die ihn/sie wissentlich und eindeutig selbst belasten.
+* Täter:in erhält Hinweise zu sich und belastenden vermeindlich Informationen über andere Charaktere und kann entscheiden diese zu teilen ,muss aber nicht.
 * Es gibt klare Hinweise, die zum Täter/zur Täterin führen, aber auch Hinweise, die andere Personen plausibel erscheinen lassen, damit die Lösung nicht sofort eindeutig ist.
+* In jeder Hinweisrunde gibt es mindestens einen neuen Hinweis, der auf eine Person deutet, aber nicht unbedingt auf den eigentlichen Mörder.
 * Am Ende jedes Hinweises gibt es eine stichpunktartige Zusammenfassung dieses Hinweises
 
-## Materialvollständigkeit
-* Zusätzlich zum Spielmaterial braucht die Erstellung einen Strukturplan in Akten (inkl. Prolog/Ablaufschritten).【F:docs/requirements/source_karlhosang_krimi-schreiben-vorlagen.md†L7-L7】
-* Für jede Rolle muss ein Charakterblatt mit Eigenschaften, Mordmotiv und Alibi vorliegen.【F:docs/requirements/source_karlhosang_krimi-schreiben-vorlagen.md†L8-L8】
-* Für die Tat muss ein Detailblatt mit Ursachenkette, genauem Tathergang, Folgen sowie Hinweisen und falschen Fährten vorliegen.【F:docs/requirements/source_karlhosang_krimi-schreiben-vorlagen.md†L9-L9】
-* Es müssen Entwürfe für Schlüsseltexte (z. B. Einstieg, Wendepunkte, Aufklärung) vorhanden sein.【F:docs/requirements/source_karlhosang_krimi-schreiben-vorlagen.md†L10-L10】
-* Die Planungsunterlagen müssen als kopier-/druckbares Arbeitsdokument verfügbar sein.【F:docs/requirements/source_karlhosang_krimi-schreiben-vorlagen.md†L11-L11】
+
+
 
 
 ## Spielablauf (6 Akte)
@@ -55,5 +52,8 @@
 2. Reihum: Zettel zeigen und begründen.  
 3. Die „Auflösung“ wird vorgelesen – Ende des Spiels.  
 
-## Spielerfahrung
-* Diskussionen sollen möglich sein, ohne dass die Regeln den Spielfluss blockieren.
+
+## Materialvollständigkeit
+* Zusätzlich zum Spielmaterial braucht die Erstellung einen Strukturplan in Akten (inkl. Prolog/Ablaufschritten)
+* Für jede Rolle muss ein Charakterblatt mit Eigenschaften, Mordmotiv und Alibi vorliegen.
+* Für die Tat muss ein Detailblatt mit Ursachenkette, genauem Tathergang, Folgen sowie Hinweisen und falschen Fährten vorliegen.
