@@ -31,7 +31,7 @@
 
 ### 2. Akt – Hinweisrunde 1
 1. Hinweise 1 werden geheim ausgeteilt und gelesen.  es geht darin um Zeitlicher Ablauf (Wer war wann, wo und mit wem?) 
-2. Inspektor-Ergebnisse werden vorgelesen.  
+2. Falls vorhanden: Inspektor-Ergebnisse werden vorgelesen.  
 3. Diskussion:  
    * Hinweise, die nicht die eigene Person belasten, sollen offen geteilt werden.  
    * Verdächtigungen und Rückfragen sind erlaubt.  
