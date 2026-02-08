@@ -61,12 +61,12 @@
 ## Materialvollständigkeit
 * Zusätzlich zum Spielmaterial braucht die Erstellung einen Strukturplan in Akten (inkl. Prolog/Ablaufschritten)
 * Storyline wird in `story/storyline` erstellt und ist in Schritt 2 die kanonische Basis für alle Folgedateien.
-   * In Schritt 2 MUSS die Storyline eigenständig konsistent sein, auch wenn `story/locations.yaml`, `story/character.yaml`, `story/motives.yaml`, `story/clues.yaml` und `story/timeline.yaml` noch nicht existieren.
+   * In Schritt 2 MUSS die Storyline eigenständig konsistent sein, auch wenn `story/locations.yaml`, `story/character.yaml`, `story/alibis.yaml`, `story/motives.yaml`, `story/clues.yaml` und `story/timeline.yaml` noch nicht existieren.
    * Die Storyline MUSS in Schritt 2 mindestens festlegen: Setting, Opfer, genau 4 verdächtige Rollen, Kerntat (Tatort, ungefähres Tatzeitfenster, Anlass) und 6-Akt-Struktur.
    * In Schritt 2 dürfen noch keine harten Referenzen auf nicht existierende IDs aus späteren Dateien vorausgesetzt werden (z.B. `M_*`, `K_*`, `B_*`, `L_*`), außer sie werden ausdrücklich als vorläufige Plan-IDs gekennzeichnet.
    * Pro verdächtiger Rolle MUSS die Storyline bereits ein plausibles Motiv, ein belastbares Geheimnis und eine Gelegenheit auf Erzählebene enthalten (noch ohne YAML-Detailtiefe).
    * Im Ablauf des Abends darf es kein gemeinsames Essen geben, da ja bei einem Krimi Dinner während der Lösung des falls gegessen wird.
-   * Nach Erstellung von Character/Motive/Clues/Timeline (Schritte 3-7) MUSS jeweils ein Pflichtabgleich erfolgen: Es wird eine neue Datei `story/storyline_v<Nummer_des_Schritts>`, die an die finalen Fakten angepasst ist erstellt, bis keine Widersprüche mehr bestehen.
+   * Nach Erstellung von Character/Motive/Alibis/Clues/Timeline (Schritte 4-8) MUSS jeweils ein Pflichtabgleich erfolgen: Es wird eine neue Datei `story/storyline_v<Nummer_des_Schritts>`, die an die finalen Fakten angepasst ist erstellt, bis keine Widersprüche mehr bestehen.
    * Bei Konflikten zwischen früher Storyline-Annahme und späteren Strukturdaten gilt: Konflikt aktiv auflösen (durch konsistente Anpassung), niemals widersprüchliche Versionen parallel stehen lassen.
 * Für jede Rolle muss ein Charakterblatt mit Eigenschaften, Geheimnissen, Mordmotiv und Alibi vorliegen.
 * Für die Tat muss ein Detailblatt mit Ursachenkette, genauem Tathergang, Folgen sowie Hinweisen und falschen Fährten vorliegen.
@@ -74,20 +74,30 @@
    * Geheimnisse müssen eng mit Zielen und Beziehungen verknüpft sein, um die Spannung zu erhöhen.【F:templates/characters.yaml.】
    * Bei der Kreation eines Spiels muss unter `story/character.yaml` eine Datei mit den Charakteren des Spiels nach dem Vorbild von [`templates/characters.yaml`](templates/characters.yaml) erstellt werden.【F:templates/characters.yaml.
    * **Die Motive und Gründe für Geheimnisse müssen konkret, nachvollziehbar und logisch sein**. Es dürfen nie unkonkrete Personen oder Motive ohne Begründung vorkommen.
-   * Wenn in `story/character.yaml` das Mordopfer genannt wird, soll es IMMER C_O_<Name des Opfers> heißen.
-   * Alibis dürfen nicht zu leicht zu entkräften sein, z.B. NIEMALS Charakter 1 behauptet er sei mit Charakter 2 zusammengewesen und CHarakter 2 war nicht dort.
-   * Es MUSS einen Eintrag für C_O_<Name des Opfers> geben. Motive und Alibis werden für diesen EIntrag nicht erstellt
+   * Wenn in `story/character.yaml` das Mordopfer genannt wird, soll es IMMER C_Opfer heißen.
+   * Es MUSS einen Eintrag für C_Opfer geben. Motive und Alibis werden für diesen Eintrag nicht erstellt.
    * Die Orte müssen Anhand von location_ID referenziert werden
-   * Jede Charakter-ID MUSS eindeutig sein; alle Referenzen in `relationships.with`, `secrets.holders` und Alibi-Zeugen müssen auf existierende Charaktere zeigen.
+   * Jede Charakter-ID MUSS eindeutig sein; alle Referenzen in `relationships.with` und `secrets.holders` müssen auf existierende Charaktere zeigen.
    * Beziehungen dürfen keine Selbstreferenzen enthalten (`with` darf nicht die eigene ID sein) und sollen keine logischen Widersprüche zwischen Rollenbeschreibung und Spielverhalten erzeugen.
    * Jede Rolle MUSS mindestens ein belastbares Geheimnis mit konkretem Risiko (`stakes`) und auslösbarer Offenlegungsregel (`reveal_rule`) haben; `earliest_round` darf nur im Bereich 1..4 liegen.
-   * Alibi-`window` muss formal gültig sein (`start < end`) und inhaltlich mit Timeline-Presence, Event-Reihenfolge und genannten Zeugen zusammenpassen.
    * Öffentliche Ziele, private Ziele und Motive dürfen sich nicht gegenseitig ausschließen; verdeckte Ziele müssen plausibel erklären, warum eine Rolle Informationen zurückhält.
    * Für ein Spiel mit X SpielerInnen muss es genau X spielbare Charaktere plus 1 Opfer-Eintrag geben; zusätzliche spielbare Rollen sind nur mit angepasstem Regelwerk zulässig.
+* Alibis werden nach dem Beispiel in [`templates/alibis.yaml`](templates/alibis.yaml) erstellt.【F:templates/alibis.yaml】
+   * Bei der Kreation eines Spiels muss unter `story/alibis.yaml` eine Datei mit den Alibis des Spiels nach dem Vorbild von `templates/alibis.yaml` erstellt werden.【F:templates/alibis.yaml】
+   * Für jede spielbare Rolle (alle außer `C_Opfer`) MUSS mindestens ein Alibi-Eintrag existieren; `character` MUSS auf eine existierende Charakter-ID aus `story/character.yaml` zeigen.
+   * Jede `alibi.id` MUSS eindeutig sein; pro Rolle darf es keine überlappenden Alibi-`window` geben.
+   * Jedes Alibi-`window` MUSS formal gültig sein (`start < end`) und das kritische Tatfenster (`murder.time`) entweder direkt abdecken oder durch explizite Lücke als Verdachtsmoment begründen.
+   * `claim.location` MUSS auf eine existierende Orts-ID verweisen und mit `story/locations.yaml` konsistent sein.
+   * Alle IDs in `claim.with`, `witnesses.supporting` und `witnesses.contradicting` MÜSSEN auf existierende Charaktere verweisen und dürfen nicht die eigene `character`-ID enthalten.
+   * `witnesses.supporting` und `witnesses.contradicting` dürfen sich nicht überschneiden und MÜSSEN am selben Ort gewesen sein; direkte Selbstbestätigung ist unzulässig. Witnesses können NICHT an unterschiedlichen Orten gleichzeitig sein.
+   * `evidence_links.clues` MUSS nur existierende `clue.id` aus `story/clues.yaml` referenzieren; `evidence_links.timeline_beats` MUSS nur existierende `timeline.beats[].id` referenzieren. Wenn `story/clues.yaml` noch nicht existiert, MUSS bei der Erstellung von `story/clues.yaml` auf Konsistenz geachtet werden.
+   * `evidence_links.presence_intervals` MUSS nur existierende Presence-Intervalle aus `story/timeline.yaml` referenzieren und zeitlich zum Alibi-`window` passen. Wenn `story/timeline.yaml` noch nicht existiert, MUSS bei der Erstellung von `story/timeline.yaml` auf Konsistenz geachtet werden.
+   * `status` MUSS einer der Werte `confirmed`, `contested` oder `disproven` sein; `confidence` MUSS im Bereich 1..3 liegen und zum `status` passen.
+   * Alibis dürfen nicht trivial widerlegbar sein (z.B. erfundener Zeuge am anderen Ort ohne Gegenbeleg). Wenn ein Alibi falsch ist, MUSS es belastbare Gegenspuren geben.
 * Motive werden nach dem Beispiel in [`templates/motives.yaml`](templates/motives.yaml) erstellt.【F:templates/motives.yaml】
    * Bei der Kreation eines Spiels muss unter `story/motives.yaml` eine Datei mit den Motiven des Spiels nach dem Vorbild von `templates/motives.yaml` erstellt werden.【F:templates/motives.yaml】
-   * Für jede spielbare Rolle (alle außer `C_O_<Name des Opfers>`) MUSS mindestens ein Motiv vorhanden sein, damit alle Rollen plausibel verdächtig bleiben.
-   * `character` MUSS auf eine existierende Charakter-ID aus `story/character.yaml` verweisen und darf nie `C_O_<Name des Opfers>` sein.
+   * Für jede spielbare Rolle (alle außer `C_Opfer`) MUSS mindestens ein Motiv vorhanden sein, damit alle Rollen plausibel verdächtig bleiben.
+   * `character` MUSS auf eine existierende Charakter-ID aus `story/character.yaml` verweisen und darf nie `C_Opfer` sein.
    * Jedes Motiv MUSS `murder: true|false` enthalten. Es darf insgesamt GENAU EIN Motiv mit `murder: true` geben; dieses MUSS zur Täterrolle in Auflösung, Timeline und Hinweisen passen.
    * Jedes Motiv MUSS belastende Hinweise (`clue_support.primary`) und ergänzende Hinweise (`clue_support.secondary`) enthalten. Verwendete `clue_id`-Referenzen müssen in den Hinweisdateien existieren und inhaltlich zum Motiv passen.
    * Jedes Motiv MUSS mindestens einen entlastenden Gegenhinweis in `counter_clues` enthalten, damit alternative Deutungen möglich sind und die Lösung nicht zu früh eindeutig wird.
@@ -100,6 +110,8 @@
    * Pro Clue MUSS `timeline_links.related_beats` mindestens einen Beat/Event enthalten.
    * `points_to.suspects` MUSS nur existierende Charakter-IDs referenzieren; `points_to.motives` MUSS nur existierende Motiv-IDs aus `story/motives.yaml` referenzieren.
    * Zu jedem Motiv MUSS es mindestens zwei Clues geben.
+   * **Es muss für JEDEN Charakter in JEDER Runde mindestens einen Hinweis geben, der geteilt werden kann**
+   * Ein Hinweis kann auch eine Frage sein, es muss allerdings klar sein, warum diese Frage gestellt wird.
    * `reliability` MUSS im Bereich 1 bis 3 liegen.
    * `discoverability.earliest_round` MUSS im Bereich 1..4 liegen und zur geplanten Dramaturgie passen (`knowledge.initial_holders` und Freigabelogik dürfen dem nicht widersprechen).
    * `knowledge.initial_holders` MUSS nur existierende Charakter-IDs enthalten; bei `public_when_revealed: true` darf der Hinweis nach Offenlegung nicht als exklusives Rollenwissen behandelt werden.
@@ -114,6 +126,6 @@
    * Für das gesamte kritische Zeitfenster (mindestens von erstem relevanten Event bis `murder.discovered_at`) muss für jede spielbare Rolle ein Aufenthaltsstatus vorliegen (Ort oder explizit `unknown`).
    * `murder.time` muss innerhalb des abgedeckten Zeitfensters liegen und strikt vor `murder.discovered_at` liegen.
    * `murder.location` sowie alle Event- und Presence-Orte müssen in den bekannten Orts-IDs enthalten sein (z.B. `story/locations.yaml` / `timeline.meta.locations`).
-   * Jede Alibi-Behauptung aus `story/character.yaml` MUSS sich in der Timeline als Event/Presence abbilden lassen (bestätigt, bestritten oder unsicher), ohne harte Widersprüche.
+   * Jede Alibi-Behauptung aus `story/alibis.yaml` MUSS sich in der Timeline als Event/Presence abbilden lassen (bestätigt, bestritten oder unsicher), ohne harte Widersprüche.
    * Falls `presence_refs` oder `witness` verwendet werden, müssen diese IDs existieren und zur angegebenen Zeit am angegebenen Ort plausibel anwesend sein.
    * Die Täterrolle muss über Timeline und Motive konsistent identifizierbar sein: Das `murder: true`-Motiv, Gelegenheit/Fenster und Tatzeit dürfen sich nicht widersprechen.
