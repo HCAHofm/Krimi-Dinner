@@ -5,8 +5,6 @@ Beziehungs-/Motiv-Hintergrund, der nicht an eine konkrete Szene gebunden ist
 Wenn du trotzdem bei der Regel bleiben willst, gib solchen Clues einen eigenen Beat-Typ, z.B. B_BACKGROUND oder B_BEFORE_PARTY, damit es formal konsistent bleibt und trotzdem semantisch passt.
 
 
-* Lass auch die Übersichten für CLues erstellen
-
 * Prüfe auf Korrektheit von Validate
 
 * alibi erst später hinzufügen zu characters.yaml da es zu inkonsistenzen führen kann. Derzeit ist das noch nicht logisch. es kommen immer wieder dinge wie: Marco und Leonie nennen sich gegenseitig als Zeugen, sind aber im gleichen Überlappungsfenster an unterschiedlichen Orten:
@@ -15,21 +13,7 @@ Konsistenzcheck mithife des validate moduls sollte ein agent machen damit, er di
 
   * `resolution-links.md` – welche Hinweise führen zu welcher Schlussfolgerung.
 
-Wie welche Dokumente ablegen
-Feedbackschleife einbauen
 
-Namen evtl erst am Ende vergeben und vorher nur Charakter A schreiben. Damit am Ende noch Geschlechter festgelegt werden können
-
-Schritt 1: erst für das autorenteam die gesamte story schreiben
-
-Schritt 2: Prüfen ob die story gut ist. auch manuell
-
-Schritt 3: Datenmodell anlegen:
-
-* Character: Beschreibung, EIgenschaften, Verbindung zu anderen Cahrakteren, Motive für den Mord 
-* Zeitlicher Ablauf: Wer war wann wo, wann geschah der Mord
- * Hinweismatrix: Hinweise entsprechend der Motive und des zeitlichen Ablaufs
-Schritt 4: Prüfen ob die Hinweise tatsächich der constraints.md entsprechen.
 
 
 
