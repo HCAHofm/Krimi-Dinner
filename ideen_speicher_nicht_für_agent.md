@@ -1,4 +1,4 @@
-*alibi erst später hinzufügen zu characters.yaml da es zu inkonsistenzen führen kann.
+* alibi erst später hinzufügen zu characters.yaml da es zu inkonsistenzen führen kann.
 
   * `resolution-links.md` – welche Hinweise führen zu welcher Schlussfolgerung.
 
