@@ -4,17 +4,17 @@ Diese Vorlagen enthalten **nur Struktur und Anforderungen** – keine Story, Rol
 Nutze sie, um ein vollständiges Spiel konsistent zu dokumentieren.
 
 ## Pflichtdokumente (Vorlagen in diesem Ordner)
-1. `spielanleitung-material-einfuehrungstext.md`
-2. `einladung.md`
-3. `rollenbeschreibung.md` (pro Rolle eine Datei)
-4. `hinweise.md` (pro Rolle eine Datei)
-5. `ermittlungsergebnisse-inspektor.md`
-6. `aufloesung.md`
-7. `ortsbeschreibung.md`
-8. `charakteruebersicht.md`
-9. `hinweisuebersicht-pro-runde.md`
-10. `kurzfassung-pro-runde.md`
-11. `entscheidendes-merkmal.md`
+1. `game-guide-materials-introduction-text.md`
+2. `invitation.md`
+3. `role-description.md` (pro Rolle eine Datei)
+4. `clues.md` (pro Rolle eine Datei)
+5. `inspector-investigation-results.md`
+6. `solution.md`
+7. `location-description.md`
+8. `character-overview.md`
+9. `clue-overview-per-round.md`
+10. `summary-per-round.md`
+11. `decisive-clue.md`
 
 ## Ausfüll-Hinweise
 - **Platzhalter** sind in eckigen Klammern geschrieben (z. B. `[Name der Rolle]`).

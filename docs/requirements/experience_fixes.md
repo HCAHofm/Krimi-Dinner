@@ -4,7 +4,7 @@ hier sollen Erfahrungen beim erstellen eines spiels als wissensspeicher für zuk
 
 **Zweck:** Maßnahmen zur besseren Spielbarkeit und Struktur.
 **Status:** Entwurf
-**Letzte Änderung:** 2025-09-25
+**Letzte Änderung:** 2026-02-08
 
 ## Identifizierte Probleme
 * Hinweisrunden sind oft zu lang und überfrachtet.【F:rules_for_krimidinner.md†L26-L27】
@@ -17,3 +17,7 @@ hier sollen Erfahrungen beim erstellen eines spiels als wissensspeicher für zuk
 * Eine zentrale Hinweisübersicht pflegen (z. B. Sammelblatt oder Matrix).【F:rules_for_krimidinner.md†L27-L28】
 * Strukturierte Dokumente mit klaren Überschriften und kurzer Rollenübersicht verwenden.【F:rules_for_krimidinner.md†L29-L30】
 * Ein eindeutiges, belastbares Überführungsmerkmal definieren und in der Auflösung verankern.【F:rules_for_krimidinner.md†L31-L31】
+
+## Erfahrungen aus Umbenennungen (2026-02-08)
+* Gut: Einheitlich englische Dateinamen in `templates/` machen Navigation und Wiederverwendung klarer.
+* Nicht gut: Verweise in `templates/README.md` wurden durch die Umbenennung direkt inkonsistent und mussten sofort nachgezogen werden.
