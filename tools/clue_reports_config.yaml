@@ -1,0 +1,29 @@
+story_dir: ../story
+
+inputs:
+  characters: character.yaml
+  motives: motives.yaml
+  clues: clues.yaml
+  locations: locations.yaml
+  timeline: timeline.yaml
+
+output_dir: reports
+outputs:
+  clues_by_beat: clues_by_beat.md
+  clues_by_motive: clues_by_motive.md
+  clues_by_suspect: clues_by_suspect.md
+  dangling_refs: dangling_refs.md
+  coverage_summary: coverage_summary.md
+
+id_rules:
+  victim_prefix: C_O_
+
+coverage_thresholds:
+  min_clues_per_motive: 2
+  min_incriminating_per_suspect: 1
+  min_non_incriminating_per_suspect: 1
+  beat_cluster_ratio_warn: 0.35
+
+render:
+  max_summary_points_per_clue: 3
+  include_source_refs: true
