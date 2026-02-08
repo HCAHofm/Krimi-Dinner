@@ -17,4 +17,7 @@
 6. Hinweise werden nach der Struktur von `templates/clues.yaml` und basierend auf `/story/storyline`, `story/character.yaml`, `story/locations.yaml` und `story/motives.yaml` erstellt und unter `/story/clues.yaml` abgelegt. Es MÜSSEN die Vorgaben in `docs/requirements/constraints.md` eingehalten werden.
 7. Der zeitliche Ablauf rund um den Mord wird nach der Struktur `templates/timeline.yaml` und basierend auf `/story/storyline`, `story/character.yaml`, `story/locations.yaml`, `story/motives.yaml` und `story/clues.yaml` erstellt und unter `/story/timeline.yaml` abgelegt. Die in `story/clues.yaml` referenzierten `timeline_links.related_beats` müssen in `story/timeline.yaml` als `beats.id` konsistent auflösbar sein. Es MÜSSEN die Vorgaben in `docs/requirements/constraints.md` eingehalten werden.
 
+# Noch nicht klar ob das verändert wird. z.B. nutze validate modul um logikbrüche zu identifizieren
 8. Überarbeiten von `/story/storyline` anhand der Infos aus `story/character.yaml`, `story/timeline.yaml`, `story/motives.yaml` und `story/clues.yaml`, sodass die Story konsistent und ausführlich ist.
+9. Erstelle eine Übersicht der Clues für menschliche augen
+10. erstelle das SPielmaterial.
