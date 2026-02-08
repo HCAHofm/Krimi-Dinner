@@ -38,6 +38,7 @@ DEFAULT_CONFIG: dict[str, Any] = {
     },
     "output_dir": "reports",
     "outputs": {
+        "clues_by_round": "clues_by_round.md",
         "clues_by_beat": "clues_by_beat.md",
         "clues_by_motive": "clues_by_motive.md",
         "clues_by_suspect": "clues_by_suspect.md",
@@ -236,6 +237,35 @@ class ClueReportGenerator:
         time = norm_text(beat.get("time"))
         location = norm_text(beat.get("location"))
         return f"`{beat_id}` ({time}, `{location}`)"
+
+    def _sharing_entities(self, clue: dict[str, Any]) -> list[str]:
+        discoverability = clue.get("discoverability")
+        discoverability = discoverability if isinstance(discoverability, dict) else {}
+        knowledge = clue.get("knowledge")
+        knowledge = knowledge if isinstance(knowledge, dict) else {}
+
+        parts: list[str] = []
+        holder = norm_text(discoverability.get("holder"))
+        if holder == "GM":
+            parts.append("Spielleitung (GM)")
+        else:
+            role_match = HOLDER_ROLE_RE.match(holder)
+            location_match = HOLDER_LOCATION_RE.match(holder)
+            if role_match:
+                parts.append(self._format_character(role_match.group("id")))
+            elif location_match:
+                location_id = location_match.group("id")
+                parts.append(f"Fundort `{location_id}`")
+
+        initial_holders = [norm_text(holder_id) for holder_id in as_list(knowledge.get("initial_holders")) if norm_text(holder_id)]
+        initial_labels = [self._format_character(holder_id) for holder_id in initial_holders]
+        for initial_label in initial_labels:
+            if initial_label not in parts:
+                parts.append(initial_label)
+
+        if not parts:
+            return ["(unbekannt)"]
+        return parts
 
     def _clue_summary(self, clue: dict[str, Any]) -> str:
         max_points = int(self.config.get("render", {}).get("max_summary_points_per_clue", 3))
@@ -437,6 +467,84 @@ class ClueReportGenerator:
                 rows = [self._clue_row(clue) for clue in sorted(self.clues_by_beat[beat_id], key=self._clue_sort_key)]
                 lines.extend(markdown_table(["Clue", "Runde", "Polarity", "Typ", "Rel", "Suspects", "Motive", "Beats"], rows))
                 lines.append("")
+
+        return lines
+
+    def build_clues_by_round(self) -> list[str]:
+        lines = self._build_report_header("Clues Nach Runde")
+        columns: list[int | str] = [1, 2, 3, 4]
+        cells: dict[str, dict[int | str, list[dict[str, Any]]]] = defaultdict(lambda: defaultdict(list))
+        has_without_round = False
+
+        for clue in self.clues:
+            discoverability = clue.get("discoverability")
+            discoverability = discoverability if isinstance(discoverability, dict) else {}
+            round_value = discoverability.get("earliest_round")
+            if isinstance(round_value, int) and round_value in {1, 2, 3, 4}:
+                column_key: int | str = round_value
+            else:
+                column_key = "Ohne Runde"
+                has_without_round = True
+            for giver in self._sharing_entities(clue):
+                cells[giver][column_key].append(clue)
+
+        if has_without_round:
+            columns.append("Ohne Runde")
+
+        table_rows: list[list[str]] = []
+        for giver in sorted(cells.keys(), key=str.lower):
+            row = [giver]
+            for column_key in columns:
+                clues_in_cell = sorted(cells[giver].get(column_key, []), key=self._clue_sort_key)
+                if not clues_in_cell:
+                    row.append("-")
+                    continue
+                entries: list[str] = []
+                for clue in clues_in_cell:
+                    polarity = norm_text(clue.get("polarity")).lower()
+                    if polarity == "incriminating":
+                        effect_label = "belastet"
+                    elif polarity == "exculpatory":
+                        effect_label = "entlastet"
+                    else:
+                        effect_label = "ambivalent"
+
+                    points_to = clue.get("points_to")
+                    points_to = points_to if isinstance(points_to, dict) else {}
+                    suspects = [self._format_character(sid) for sid in as_list(points_to.get("suspects")) if norm_text(sid)]
+                    suspects_label = ", ".join(suspects) if suspects else "-"
+                    clue_type = norm_text(clue.get("type")) or "-"
+                    clue_label = f"`{norm_text(clue.get('id'))}` - {norm_text(clue.get('title'))}"
+                    summary = self._clue_summary(clue)
+                    entry = f"{clue_label}<br>Typ: {clue_type} | Wirkung: {effect_label} | Betrifft: {suspects_label}"
+                    if summary != "-":
+                        entry += f"<br>Kurz: {summary}"
+                    entries.append(entry)
+                row.append("<br><br>".join(entries))
+            table_rows.append(row)
+
+        headers = ["Hinweisgebende"] + [f"Runde {c}" if isinstance(c, int) else str(c) for c in columns]
+        lines.extend(markdown_table(headers, table_rows))
+        lines.append("")
+
+        if not has_without_round:
+            lines.append("_Alle Clues haben eine gueltige Runde in `discoverability.earliest_round`._")
+            lines.append("")
+        else:
+            lines.append("Hinweis: Spalte `Ohne Runde` zeigt Clues ohne gueltige Rundenzuordnung.")
+            lines.append("")
+
+        if "(unbekannt)" in cells:
+            lines.append("Hinweis: `(unbekannt)` bedeutet, dass kein klarer Hinweisgeber in `discoverability.holder` oder `knowledge.initial_holders` steht.")
+            lines.append("")
+
+        if "Spielleitung (GM)" in cells:
+            lines.append("Hinweis: `Spielleitung (GM)` ist kein Charakter, aber als Hinweisquelle enthalten.")
+            lines.append("")
+
+        if any(giver.startswith("Fundort `") for giver in cells):
+            lines.append("Hinweis: `Fundort ...` bedeutet, dass der Clue ueber einen Ort eingebracht wird.")
+            lines.append("")
 
         return lines
 
@@ -749,6 +857,7 @@ class ClueReportGenerator:
     def generate_reports(self, output_dir: Path) -> dict[str, Path]:
         outputs = self.config.get("outputs", {})
         rendered: dict[str, list[str]] = {
+            "clues_by_round": self.build_clues_by_round(),
             "clues_by_beat": self.build_clues_by_beat(),
             "clues_by_motive": self.build_clues_by_motive(),
             "clues_by_suspect": self.build_clues_by_suspect(),

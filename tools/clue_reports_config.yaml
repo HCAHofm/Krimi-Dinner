@@ -9,6 +9,7 @@ inputs:
 
 output_dir: reports
 outputs:
+  clues_by_round: clues_by_round.md
   clues_by_beat: clues_by_beat.md
   clues_by_motive: clues_by_motive.md
   clues_by_suspect: clues_by_suspect.md
