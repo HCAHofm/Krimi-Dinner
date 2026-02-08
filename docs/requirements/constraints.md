@@ -60,6 +60,13 @@
 
 ## Materialvollständigkeit
 * Zusätzlich zum Spielmaterial braucht die Erstellung einen Strukturplan in Akten (inkl. Prolog/Ablaufschritten)
+* Storyline wird in `story/storyline` erstellt und ist in Schritt 2 die kanonische Basis für alle Folgedateien.
+   * In Schritt 2 MUSS die Storyline eigenständig konsistent sein, auch wenn `story/locations.yaml`, `story/character.yaml`, `story/motives.yaml`, `story/clues.yaml` und `story/timeline.yaml` noch nicht existieren.
+   * Die Storyline MUSS in Schritt 2 mindestens festlegen: Setting, Opfer, genau 4 verdächtige Rollen, Kerntat (Tatort, ungefähres Tatzeitfenster, Anlass) und 6-Akt-Struktur.
+   * In Schritt 2 dürfen noch keine harten Referenzen auf nicht existierende IDs aus späteren Dateien vorausgesetzt werden (z.B. `M_*`, `K_*`, `B_*`, `L_*`), außer sie werden ausdrücklich als vorläufige Plan-IDs gekennzeichnet.
+   * Pro verdächtiger Rolle MUSS die Storyline bereits ein plausibles Motiv, ein belastbares Geheimnis und eine Gelegenheit auf Erzählebene enthalten (noch ohne YAML-Detailtiefe).
+   * Nach Erstellung von Character/Motive/Clues/Timeline (Schritte 3-7) MUSS jeweils ein Pflichtabgleich erfolgen: Es wird eine neue Datei `story/storyline_v<Nummer_des_Schritts>`, die an die finalen Fakten angepasst ist erstellt, bis keine Widersprüche mehr bestehen.
+   * Bei Konflikten zwischen früher Storyline-Annahme und späteren Strukturdaten gilt: Konflikt aktiv auflösen (durch konsistente Anpassung), niemals widersprüchliche Versionen parallel stehen lassen.
 * Für jede Rolle muss ein Charakterblatt mit Eigenschaften, Geheimnissen, Mordmotiv und Alibi vorliegen.
 * Für die Tat muss ein Detailblatt mit Ursachenkette, genauem Tathergang, Folgen sowie Hinweisen und falschen Fährten vorliegen.
 * Charaktere werden nach dem Beispiel in [`templates/characters.yaml`](templates/characters.yaml) erstellt: Eigenschaften, Beziehungen und Geheimnisse sind so zu gestalten, dass sie Konflikte und Dynamik erzeugen, die im Spielverlauf aufgedeckt werden können; 
@@ -100,7 +107,7 @@
    * Charaktere KÖNNEN NICHT an zwei Orten gleichzeitig sein.
    * Es muss zu jeden Zeitpunkt klar sein, wer wo war.
    * Die Beat-IDs in `timeline.beats[].id` sind die kanonischen Referenzen für `story/clues.yaml -> timeline_links.related_beats`. Jede dort referenzierte Beat-ID MUSS in der Timeline exakt existieren.
-   * Wenn `story/clues.yaml` vor `story/timeline.yaml` erstellt wurde, MUSS die Timeline alle bereits verwendeten Beat-IDs übernehmen oder die Clue-Referenzen im selben Arbeitsschritt konsistent aktualisieren. Verwaiste Referenzen sind unzulässig. Prüfe dass die Beat Referenzen aus `story/clues.yaml` und `story/timeline.yaml` NICHT zu Logikbrüchen führen -.
+   * Wenn `story/clues.yaml` vor `story/timeline.yaml` erstellt wurde, MUSS die Timeline alle bereits verwendeten Beat-IDs übernehmen oder die Clue-Referenzen im selben Arbeitsschritt konsistent aktualisieren. Verwaiste Referenzen sind unzulässig; Beat-Referenzen aus `story/clues.yaml` und `story/timeline.yaml` dürfen keine Logikbrüche erzeugen.
    * Für jedes Presence-Intervall gilt: `start < end`; Intervalle einer Person dürfen sich nicht überlappen.
    * Für das gesamte kritische Zeitfenster (mindestens von erstem relevanten Event bis `murder.discovered_at`) muss für jede spielbare Rolle ein Aufenthaltsstatus vorliegen (Ort oder explizit `unknown`).
    * `murder.time` muss innerhalb des abgedeckten Zeitfensters liegen und strikt vor `murder.discovered_at` liegen.

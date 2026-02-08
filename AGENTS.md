@@ -10,7 +10,7 @@
 
 ## Schritte für Erstellung von Krimi-Dinner Spiel
 1. Grundsätzliche Story erstellen inkl Vorgeschichte. Mach dazu 10 Vorschläge mit Stichpunkten zum Inhalt der Geschichte.
-2. Story wurde von Autor ausgewählt. Geschichte wird von dir detailliert ausformuliert und in `/story/storyline` abgelegt. Hier müssen Namen für Charaktere vergeben werden.
+2. Story wurde von Autor ausgewählt. Geschichte wird von dir detailliert ausformuliert und in `/story/storyline` abgelegt. Hier müssen Namen für Charaktere vergeben werden. Da dies vor den strukturierten Dateien erfolgt, dürfen in diesem Schritt keine harten Referenzen auf noch nicht existierende IDs aus `story/character.yaml`, `story/motives.yaml`, `story/clues.yaml` oder `story/timeline.yaml` vorausgesetzt werden.
 3. Schauplätze des Spiels werden nach der Struktur von `templates/locations.yaml` und basierend auf `/story/storyline` erstellt und unter `/story/locations.yaml` abgelegt.
 4. Charaktere werden nach Vorgaben in `docs/requirements/constraints.md`, `/story/storyline`, `/story/locations.yaml` kreiert und in `story/character.yaml` abgelegt.
 5. Die Motive der Charaktere werden nach der Struktur von `templates/motives.yaml` und basierend auf `/story/storyline`, `story/character.yaml` und `story/locations.yaml` erstellt und unter `/story/motives.yaml` abgelegt. Es MÜSSEN die Vorgaben in `docs/requirements/constraints.md` eingehalten werden.
