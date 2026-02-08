@@ -1,3 +1,14 @@
+5) Kritischer Punkt zu deiner Regel “jeder Clue braucht related_beats”
+Das macht es sehr prüfbar, aber du verlierst eine Klasse von Hinweisen:
+längerfristige Fakten (z.B. „Schulden seit Monaten“)
+Beziehungs-/Motiv-Hintergrund, der nicht an eine konkrete Szene gebunden ist
+Wenn du trotzdem bei der Regel bleiben willst, gib solchen Clues einen eigenen Beat-Typ, z.B. B_BACKGROUND oder B_BEFORE_PARTY, damit es formal konsistent bleibt und trotzdem semantisch passt.
+
+
+* Lass auch die Übersichten für CLues erstellen
+
+* Prüfe auf Korrektheit von Validate
+
 * alibi erst später hinzufügen zu characters.yaml da es zu inkonsistenzen führen kann. Derzeit ist das noch nicht logisch. es kommen immer wieder dinge wie: Marco und Leonie nennen sich gegenseitig als Zeugen, sind aber im gleichen Überlappungsfenster an unterschiedlichen Orten:
 
 Konsistenzcheck mithife des validate moduls sollte ein agent machen damit, er die Inhalte direkt anpassen kann.
