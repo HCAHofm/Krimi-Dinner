@@ -38,8 +38,8 @@ characters:
       opportunities:
         access_level: "mittel"        # niedrig/mittel/hoch
         constraints: "War zwischen 21:10-21:20 unbeobachtet."
-  - id: Char_D
-    name: "Char_D"
+  - id: Moerder
+    name: "Moerder"
     public_description: "Anwalt des Opfers, geschniegelt, wirkt hilfsbereit, beantwortet Fragen oft mit Gegenfragen."
     traits:
       - "analytisch"
@@ -92,3 +92,30 @@ characters:
       opportunities:
         access_level: "hoch"
         constraints: "Hat plausiblen Grund, sich frei im Haus zu bewegen; kann unauffällig Dokumente erreichen."
+  - id: Opfer
+    name: "Opfer"
+    public_description: "Gastgeber des Abends, wirkte angespannt und hielt offenbar belastende Informationen zurück."
+    traits:
+      - "beharrlich"
+      - "misstrauisch"
+      - "provokativ"
+    goals:
+      public_goal: "Die Runde strukturiert durch die offenen Fragen führen, zentrale Belege schrittweise teilen und die Gruppe auf eine nachvollziehbare Rekonstruktion der Ereignisse festlegen."
+      private_goal: "Mindestens eine der beteiligten Personen durch gezielte Konfrontation mit Teilbeweisen zu einem überprüfbaren Widerspruch oder Geständnis bewegen und dabei die vollständige Beweiskette bis zum entscheidenden Moment zurückhalten."
+    relationships:
+      - with: Char_A
+        type: "konflikt"
+        valence: -2
+        notes: "Opfer konfrontierte Char_A mit einer datierten Vertragskopie samt handschriftlichen Korrekturen und drohte, diese Unterlagen bei der nächsten Rückkehr ins Tal gleichzeitig an Presse und Ermittlungsbehoerde weiterzugeben."
+      - with: Moerder
+        type: "bedrohung"
+        valence: -3
+        notes: "Opfer kündigte an, noch am selben Abend ein versiegeltes Dossier mit Kontoauszügen, Telefonprotokollen und einer unterschriebenen Zeugenerklärung an eine externe Vertrauensperson zu übergeben, falls ihm etwas zustößt."
+    secrets:
+      - id: S_Opfer_1
+        summary: "Opfer verschwieg über Jahre, dass es nach dem ursprünglichen Vorfall selbst eine zentrale Spur manipulierte und eine frühe Zeugenaussage absichtlich abgeschwächt hatte, um sich vor eigener Strafverfolgung zu schützen."
+        stakes: "Verlust von Vertrauen und möglicher strafrechtlicher Ärger."
+        holders: [Opfer]
+        reveal_rule:
+          earliest_round: 4
+          trigger: "Wenn nach dem Grund für das lange Schweigen des Opfers gefragt wird"
