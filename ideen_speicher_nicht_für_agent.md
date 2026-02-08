@@ -1,4 +1,6 @@
-* alibi erst später hinzufügen zu characters.yaml da es zu inkonsistenzen führen kann.
+* alibi erst später hinzufügen zu characters.yaml da es zu inkonsistenzen führen kann. Derzeit ist das noch nicht logisch. es kommen immer wieder dinge wie: Marco und Leonie nennen sich gegenseitig als Zeugen, sind aber im gleichen Überlappungsfenster an unterschiedlichen Orten:
+
+Konsistenzcheck mithife des validate moduls sollte ein agent machen damit, er die Inhalte direkt anpassen kann.
 
   * `resolution-links.md` – welche Hinweise führen zu welcher Schlussfolgerung.
 
