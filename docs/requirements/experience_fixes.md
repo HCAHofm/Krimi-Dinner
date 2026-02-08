@@ -21,3 +21,6 @@ hier sollen Erfahrungen beim erstellen eines spiels als wissensspeicher für zuk
 ## Erfahrungen aus Umbenennungen (2026-02-08)
 * Gut: Einheitlich englische Dateinamen in `templates/` machen Navigation und Wiederverwendung klarer.
 * Nicht gut: Verweise in `templates/README.md` wurden durch die Umbenennung direkt inkonsistent und mussten sofort nachgezogen werden.
+
+## Erfahrungen aus Constraints-Erweiterung (2026-02-08)
+* Gut: Die explizite Vorgabe "alle sind verdächtig und haben ein Motiv" schärft Rollenbau und verhindert harmlose Nebenrollen ohne Ermittlungswert.

@@ -2,20 +2,28 @@
 
 **Zweck:** Prüfliste für Logik, Vollständigkeit und Spielbarkeit.
 **Status:** Entwurf
-**Letzte Änderung:** 2025-09-26
+**Letzte Änderung:** 2026-02-08
 
 ## Logische Konsistenz
-* Rollenbeschreibung, Hinweise und Auflösung dürfen sich nicht widersprechen; insbesondere muss der Tatablauf zu Alibis und Motiv passen.【F:Play-rules.md†L23-L33】【F:rules_for_krimidinner.md†L6-L10】
-* Hinweise müssen mit der Wahrheitspflicht kompatibel sein (wer darf was sagen/verschweigen?).【F:Play-rules.md†L23-L29】
+* Rollenbeschreibung, Hinweise und Auflösung dürfen sich nicht widersprechen; insbesondere muss der Tatablauf zu Alibis und Motiv passen.
+* Hinweise müssen mit der Wahrheitspflicht kompatibel sein. Ausschließich Spieler des Mörders darf lügen.
+* Alle Spieler:innen sind grundsätzlich verdächtig und jede Rolle muss ein plausibles Mordmotiv haben.
 * jeder spieler kennt nur die Hinweise zum eigenen Charakter
 
 ## Hinweisabdeckung
-* Für jede Rolle existieren pro Hinweisrunde passende Hinweise oder Gerüchte gemäß Ablaufstruktur.【F:Play-rules.md†L42-L62】【F:rules_for_krimidinner.md†L6-L10】
+* Für jede Rolle existieren pro Hinweisrunde passende Hinweise oder Gerüchte gemäß Ablaufstruktur.
 * Pflicht-Hinweise decken Tatablauf, Motiv und Gelegenheit ab; ohne sie ist die Auflösung nicht erreichbar.
 * Hinweise sind rollenexklusiv: Nur die Rolle, die den Hinweis erhält, kennt ihn zu Beginn.
 * Täter:in erhält keine Hinweise, die ihn/sie wissentlich und eindeutig selbst belasten.
 * Es gibt klare Hinweise, die zum Täter/zur Täterin führen, aber auch Hinweise, die andere Personen plausibel erscheinen lassen, damit die Lösung nicht sofort eindeutig ist.
 * Am Ende jedes Hinweises gibt es eine stichpunktartige Zusammenfassung dieses Hinweises
+
+## Materialvollständigkeit
+* Zusätzlich zum Spielmaterial braucht die Erstellung einen Strukturplan in Akten (inkl. Prolog/Ablaufschritten).【F:docs/requirements/source_karlhosang_krimi-schreiben-vorlagen.md†L7-L7】
+* Für jede Rolle muss ein Charakterblatt mit Eigenschaften, Mordmotiv und Alibi vorliegen.【F:docs/requirements/source_karlhosang_krimi-schreiben-vorlagen.md†L8-L8】
+* Für die Tat muss ein Detailblatt mit Ursachenkette, genauem Tathergang, Folgen sowie Hinweisen und falschen Fährten vorliegen.【F:docs/requirements/source_karlhosang_krimi-schreiben-vorlagen.md†L9-L9】
+* Es müssen Entwürfe für Schlüsseltexte (z. B. Einstieg, Wendepunkte, Aufklärung) vorhanden sein.【F:docs/requirements/source_karlhosang_krimi-schreiben-vorlagen.md†L10-L10】
+* Die Planungsunterlagen müssen als kopier-/druckbares Arbeitsdokument verfügbar sein.【F:docs/requirements/source_karlhosang_krimi-schreiben-vorlagen.md†L11-L11】
 
 
 ## Spielablauf (6 Akte)
@@ -48,4 +56,4 @@
 3. Die „Auflösung“ wird vorgelesen – Ende des Spiels.  
 
 ## Spielerfahrung
-* Diskussionen sollen möglich sein, ohne dass die Regeln den Spielfluss blockieren.【F:Play-rules.md†L70-L71】
+* Diskussionen sollen möglich sein, ohne dass die Regeln den Spielfluss blockieren.

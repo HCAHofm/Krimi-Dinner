@@ -4,19 +4,19 @@
 Wir brauchen eine verlässliche Definition dessen, was eingehalten werden muss, damit das Krimi‑Dinner im Spiel funktioniert. Dafür sammeln wir die nötigen Informationen strukturiert, legen sie nachvollziehbar ab und leiten daraus eindeutige Spielanforderungen ab.
 
 ## 1) Welche Informationen brauchen wir?
-Diese Liste orientiert sich an den bereits dokumentierten Regeln, dem Spielablauf und den vorhandenen Dokumenttypen (Einladung, Rollen, Hinweise, Auflösung).【F:Play-rules.md†L1-L74】【F:rules_for_krimidinner.md†L1-L24】
+Diese Liste orientiert sich an den bereits dokumentierten Regeln, dem Spielablauf und den vorhandenen Dokumenttypen (Einladung, Rollen, Hinweise, Auflösung).
 
 ### A. Spielmechanik & Ablauf
-* Phasen/Acts mit klaren Zielen und Timing (Einführung, Hinweisrunden, Gerüchterunde, Auflösung).【F:Play-rules.md†L34-L74】
-* Regeln zu Wahrheitspflicht, Lügenregel, Improvisation und Umgang mit Wissenslücken.【F:Play-rules.md†L23-L33】
-* Mindestanzahl an Hinweisen je Runde und pro Rolle (abgeleitet aus Hinweisrunden‑Struktur).【F:Play-rules.md†L41-L66】【F:rules_for_krimidinner.md†L6-L12】
+* Phasen/Acts mit klaren Zielen und Timing (Einführung, Hinweisrunden, Gerüchterunde, Auflösung).
+* Regeln zu Wahrheitspflicht, Lügenregel, Improvisation und Umgang mit Wissenslücken.
+* Mindestanzahl an Hinweisen je Runde und pro Rolle (abgeleitet aus Hinweisrunden‑Struktur).
 
 ### B. Narrativ & Logik
 * Tatablauf, Motiv, Gelegenheit (timeline + alibis).【F:rules_for_krimidinner.md†L6-L12】
-* Konsistenz zwischen Rollenbeschreibung, Hinweisen und Auflösung (keine Widersprüche).【F:Play-rules.md†L23-L33】
+* Konsistenz zwischen Rollenbeschreibung, Hinweisen und Auflösung (keine Widersprüche).
 
 ### C. Rollen & Balance
-* Anzahl Rollen, Verhältnis Täter/Ermittler, Informationsverteilung pro Rolle (wer weiß was, wann).【F:Play-rules.md†L5-L16】【F:Play-rules.md†L41-L66】
+* Anzahl Rollen, Verhältnis Täter/Ermittler, Informationsverteilung pro Rolle (wer weiß was, wann).
 * Konfliktpotenzial und Verdachtsmomente pro Rolle.
 
 ### D. Material & Dokumente
@@ -26,7 +26,7 @@ Diese Liste orientiert sich an den bereits dokumentierten Regeln, dem Spielablau
 ## 2) Wie erhalten wir diese Informationen?
 
 ### Schritt 1: Ist‑Analyse vorhandener Regeln & Beispiele
-* Extrahiere Regeln, Ablauf, Dokumentarten und bekannte Schwächen aus den vorhandenen Regelwerken und Spielnotizen.【F:Play-rules.md†L1-L74】【F:rules_for_krimidinner.md†L1-L33】
+* Extrahiere Regeln, Ablauf, Dokumentarten und bekannte Schwächen aus den vorhandenen Regelwerken und Spielnotizen.
 * Ergebnis: konsolidierte Liste „Muss‑Regeln“ + „Nice‑to‑have“.
 
 ### Schritt 2: Story‑Design Workshop (intern)
@@ -39,7 +39,7 @@ Diese Liste orientiert sich an den bereits dokumentierten Regeln, dem Spielablau
 
 ### Schritt 4: Konsistenz‑Checks
 * Prüfe Widersprüche zwischen Rollen, Hinweisen und Auflösung.
-* Validierung anhand der „Wahrheitspflicht/Lügenregel“ (wer darf was behaupten).【F:Play-rules.md†L23-L33】
+* Validierung anhand der „Wahrheitspflicht/Lügenregel“ (wer darf was behaupten).
 
 ### Schritt 5: Playtest‑Feedback
 * Kurzer Probelauf mit 2–3 Personen zur Prüfung von:
@@ -51,7 +51,7 @@ Diese Liste orientiert sich an den bereits dokumentierten Regeln, dem Spielablau
 
 ### A. Single‑Source‑of‑Truth (Ordnerstruktur)
 * `docs/requirements/`
-  * `rules.md` – verbindliche Spielregeln & Ablauf (konsolidiert).【F:Play-rules.md†L1-L74】
+  * `gameplay_guidelines.md` – verbindliche Spielregeln & Ablauf (konsolidiert).
   * `constraints.md` – Muss‑Kriterien fürs Funktionieren (Widerspruchsfreiheit, Hinweisabdeckung, etc.).
   * `experience_fixes.md` – verpflichtende Verbesserungen (Hinweisübersicht, Kurzfassungen, entscheidendes Merkmal).【F:rules_for_krimidinner.md†L26-L33】
 * `docs/story/`
@@ -67,13 +67,13 @@ Diese Liste orientiert sich an den bereits dokumentierten Regeln, dem Spielablau
   * Bei Hinweisen: Referenz zur Rolle und Runde.
 
 ## 4) Output, der am Ende vorliegen muss
-* Konsolidiertes Regelwerk + Ablauf, damit alle dieselben Spielregeln nutzen.【F:Play-rules.md†L1-L74】
+* Konsolidiertes Regelwerk + Ablauf, damit alle dieselben Spielregeln nutzen.
 * Vollständige Dokumentliste inklusive Verbesserungen aus der Erfahrungskritik.【F:rules_for_krimidinner.md†L16-L33】
 * Hinweis‑Matrix und Tat‑Timeline zur Absicherung der Logik.
 
 ---
 
 **Nächster Schritt (Vorschlag):**
-1) `docs/requirements/rules.md` aus den vorhandenen Regeln konsolidieren.  
+1) `docs/requirements/gameplay_guidelines.md` aus den vorhandenen Regeln konsolidieren.  
 2) Tat‑Timeline entwerfen und Rollen daraus ableiten.  
 3) Hinweis‑Matrix aufbauen und Pflicht‑Hinweise definieren.
