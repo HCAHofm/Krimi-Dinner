@@ -4,11 +4,16 @@
 **Status:** Entwurf
 **Letzte Änderung:** 2026-02-08
 
+## Rahmenbedingungen
+* Spiel ist für 4 SpielerInnen ausgelegt
+
 ## Logische Konsistenz
 * Rollenbeschreibung, Hinweise und Auflösung dürfen sich nicht widersprechen; insbesondere muss der Tatablauf zu Alibis und Motiv passen.
 * Hinweise müssen mit der Wahrheitspflicht kompatibel sein. Ausschließich Spieler des Mörders darf lügen.
 * Alle Spieler:innen sind grundsätzlich verdächtig und jede Rolle muss ein plausibles Mordmotiv haben.
 * jeder spieler kennt nur die Hinweise zum eigenen Charakter
+* Jeder Charakter braucht ein Geheimnis, dessen Veröffentlichung den Charakter in Probleme und in Tatverdacht bringt
+
 
 ## Hinweisabdeckung
 * Für jede Rolle existieren pro Hinweisrunde passende Hinweise oder Gerüchte gemäß Ablaufstruktur.
@@ -55,5 +60,6 @@
 
 ## Materialvollständigkeit
 * Zusätzlich zum Spielmaterial braucht die Erstellung einen Strukturplan in Akten (inkl. Prolog/Ablaufschritten)
-* Für jede Rolle muss ein Charakterblatt mit Eigenschaften, Mordmotiv und Alibi vorliegen.
+* Für jede Rolle muss ein Charakterblatt mit Eigenschaften, Geheimnissen, Mordmotiv und Alibi vorliegen.
 * Für die Tat muss ein Detailblatt mit Ursachenkette, genauem Tathergang, Folgen sowie Hinweisen und falschen Fährten vorliegen.
+* Charaktere werden nach dem Beispiel in [`templates/characters.yaml`](templates/characters.yaml) erstellt: Eigenschaften, Beziehungen und Geheimnisse sind so zu gestalten, dass sie Konflikte und Dynamik erzeugen, die im Spielverlauf aufgedeckt werden können; Geheimnisse müssen eng mit Zielen und Beziehungen verknüpft sein, um die Spannung zu erhöhen.【F:templates/characters.yaml.】Bei der Kreation eines Spiels muss unter `story/character.yaml` eine Datei mit den Charakteren des Spiels nach dem Vorbild von [`templates/characters.yaml`](templates/characters.yaml) erstellt werden.【F:templates/characters.yaml】

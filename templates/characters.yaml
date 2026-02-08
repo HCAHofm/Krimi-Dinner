@@ -1,0 +1,102 @@
+# Dies ist ein Beispiel für die Charaktere, deren Eigeschaften, Beziehungen und Geheimnisse. Bei der Erstellung eigener Charaktere sollten die Eigenschaften so gewählt werden, dass sie interessante Dynamiken und Konflikte ermöglichen, die im Laufe des Spiels aufgedeckt werden können. Die Geheimnisse sollten eng mit den Zielen und Beziehungen der Charaktere verknüpft sein, um die Spannung zu erhöhen.
+characters:
+  - id: C_ALMA
+    name: "Alma Krüger"
+    public_description: "Galeristin, souverän, wirkt kontrolliert."
+    traits:
+      - "charmant"
+      - "konfliktscheu"
+      - "risikobereit"
+    goals:
+      public_goal: "Den Abend ohne Skandal überstehen."
+      private_goal: "Ein belastendes Dokument zurückholen."
+    relationships:
+      - with: C_VIKTOR
+        type: "geschäftlich"
+        valence: -2      # -3..+3 (Konflikt/Bindung)
+        notes: "Viktor schuldet Alma Geld."
+      - with: C_NORA
+        type: "freundschaft"
+        valence: +2
+        notes: "Nora weiß zu viel über Alma."
+    secrets:
+      - id: S_ALMA_1
+        summary: "Alma hat das Testament manipuliert (Beweis existiert)."
+        stakes: "Ruin/Haft"
+        holders: [C_ALMA]            # Wer weiß es sicher
+        reveal_rule:
+          earliest_round: 2
+          trigger: "Wenn jemand nach dem Testament fragt"
+    murder_context:
+      motives:
+        - id: M_ALMA_1
+          type: "finanziell"
+          strength: 3                 # 1..3
+          rationale: "Opfer wollte Alma auffliegen lassen."
+          supports_clues: [K_DOC_3]
+      opportunities:
+        access_level: "mittel"        # niedrig/mittel/hoch
+        constraints: "War zwischen 21:10-21:20 unbeobachtet."
+      alibi:
+        claim: "Mit Nora im Wintergarten."
+        window: { start: "21:05", end: "21:25" }
+        witnesses: [C_NORA]
+        strength: 2                   # 1..3
+  - id: C_TOBIAS
+    name: "Tobias Lennert"
+    public_description: "Anwalt des Opfers, geschniegelt, wirkt hilfsbereit, beantwortet Fragen oft mit Gegenfragen."
+    traits:
+      - "analytisch"
+      - "ehrgeizig"
+      - "kontrolliert"
+    goals:
+      public_goal: "Den Abend geordnet halten und Eskalationen vermeiden."
+      private_goal: "Ein verschwundenes Schriftstück finden, bevor es jemand anderes findet."
+    relationships:
+      - with: C_VIKTOR
+        type: "rivalität"
+        valence: -2
+        notes: "Beide konkurrieren um Einfluss beim Opfer; Tobias hält Viktor für unzuverlässig."
+      - with: C_ALMA
+        type: "geschäftlich"
+        valence: +1
+        notes: "Tobias hat Alma juristisch geholfen; er erwartet dafür Loyalität."
+      - with: C_NORA
+        type: "schutz"
+        valence: +1
+        notes: "Er behandelt Nora herablassend 'fürsorglich' und unterschätzt sie."
+    secrets:
+      - id: S_TOBIAS_1
+        summary: "Tobias hat eine Klausel im Sinne des Opfers 'kreativ' ausgelegt und sich damit angreifbar gemacht."
+        stakes: "Berufsverbot / Erpressbarkeit"
+        holders: [C_TOBIAS]
+        reveal_rule:
+          earliest_round: 2
+          trigger: "Wenn jemand nach dem letzten Vertrags-/Testament-Update fragt"
+      - id: S_TOBIAS_2
+        summary: "Tobias war kurz vor dem Mord in der Bibliothek und hat dort etwas entnommen."
+        stakes: "Verdacht als Täter / Vertuschung"
+        holders: [C_TOBIAS]
+        reveal_rule:
+          earliest_round: 3
+          trigger: "Wenn Tobias direkt nach seinem Aufenthaltsort zwischen 21:10 und 21:20 gefragt wird"
+    murder_context:
+      motives:
+        - id: M_TOBIAS_1
+          type: "schutz / vertuschung"
+          strength: 2
+          rationale: "Opfer drohte, Tobias’ juristische Manipulation öffentlich zu machen."
+          supports_clues: []   # z.B. später: [K_DOC_X]
+        - id: M_TOBIAS_2
+          type: "macht"
+          strength: 1
+          rationale: "Ohne das Opfer verliert Tobias Einfluss; mit dem richtigen Dokument gewinnt er Kontrolle."
+          supports_clues: []
+      opportunities:
+        access_level: "hoch"
+        constraints: "Hat plausiblen Grund, sich frei im Haus zu bewegen; kann unauffällig Dokumente erreichen."
+      alibi:
+        claim: "Telefonat im Flur wegen eines 'Notfalls' in einer Kanzleisache."
+        window: { start: "21:12", end: "21:20" }
+        witnesses: []          # bewusst schwach
+        strength: 1
