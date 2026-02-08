@@ -1,3 +1,12 @@
+alibi:
+      contradicting: []
+      // sind beide nicht richtig konsistent: wie wird contradicting im alibi dargestellt, wie begründet der contradicting, dass die person lügt?
+      gm_truth: "Char_A war den groessten Teil des Fensters dort, war aber kurz     unbeobachtet."
+      // wie kann mit variablen dargestellt werden dass person eine zeit lang unbeobachtet war?
+
+
+
+
 5) Kritischer Punkt zu deiner Regel “jeder Clue braucht related_beats”
 Das macht es sehr prüfbar, aber du verlierst eine Klasse von Hinweisen:
 längerfristige Fakten (z.B. „Schulden seit Monaten“)
