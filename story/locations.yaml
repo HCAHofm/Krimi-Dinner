@@ -1,0 +1,25 @@
+locations:
+  - id: L_EINGANGSBEREICH
+    name: "Eingangsbereich / Schluesselbrett"
+    access: "alle"
+  - id: L_SPEISESAAL
+    name: "Speisesaal"
+    access: "alle"
+  - id: L_SALON
+    name: "Salon mit Kamin"
+    access: "alle"
+  - id: L_OBERER_GANG
+    name: "Oberer Gang"
+    access: "alle"
+  - id: L_ARBEITSZIMMER
+    name: "Arbeitszimmer"
+    access: "nur_mit_schluessel"
+  - id: L_TECHNIKRAUM
+    name: "Technikraum / Notstrom"
+    access: "alle"
+  - id: L_SCHLAFZIMMER_UNTEN
+    name: "Schlafzimmer unten"
+    access: "alle"
+  - id: L_SCHLAFZIMMER_OBEN
+    name: "Schlafzimmer oben"
+    access: "alle"

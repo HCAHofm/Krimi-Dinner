@@ -1,0 +1,43 @@
+# Storyline v7: Schnee, Schweigen, Schuesse in der Berghuette
+
+## Kanonische Besetzung
+- C_MARCO_STEINER (Marco Steiner)
+- C_HELENE_FALK (Helene Falk)
+- C_DR_LEONIE_WINTER (Dr. Leonie Winter)
+- C_GREGOR_VOSS (Gregor Voss)
+- C_O_ELIAS_REUTER (Opfer)
+
+## Kanonischer Tathergang
+- Mordzeit: 21:05 Uhr.
+- Tatort: L_ARBEITSZIMMER.
+- Entdeckung: 21:07 Uhr.
+- Kerntat: Gregor Voss erschiesst Elias Reuter aus kurzer Distanz und verschleiert den Zugriff auf Schluessel/Waffe.
+
+## Motivkonsistenz
+- Alle vier spielbaren Rollen besitzen ein plausibles Mordmotiv.
+- Das einzige Motiv mit `murder: true` bleibt `M_GREGOR_1`.
+- Die Motive sind mit den Hinweisen in `story/clues.yaml` verknuepft und durch Timeline-Beats abgedeckt.
+
+## Timeline-Abgleich aus Schritt 7
+- Kritisches Fenster 19:45 bis 21:10 ist fuer alle spielbaren Rollen durch Presence-Intervalle vollstaendig belegt.
+- Es gibt keine ueberlappenden Intervalle je Charakter.
+- Alle in den Hinweisen verwendeten Beat-IDs sind in der Timeline vorhanden:
+  - `B_1945_OFFENER_STREIT`
+  - `B_2015_STROMFLACKERN`
+  - `B_2030_GESTAENDNISFORDERUNG`
+  - `B_2048_MARCO_TECHNIKFENSTER`
+  - `B_2050_HELENE_SALONFENSTER`
+  - `B_2052_LEONIE_MEDKITFENSTER`
+  - `B_2059_GREGOR_EINGANGSFENSTER`
+  - `B_2103_BEWEGUNG_IM_GANG`
+  - `B_2105_SCHUSS`
+  - `B_2107_LEICHENFUND`
+
+## Alibi-Abgleich
+- Marco: Technikraum-Fenster ist als teils bestaetigt/teils behauptet abgebildet.
+- Helene: Salon-/Eingangsbereich-Fenster ist als teilweise bestaetigt und nicht durchgaengig markiert.
+- Leonie: Medkit-Fenster im unteren Schlafzimmer ist als behauptet mit Luecke bis zur Tatzeit erfasst.
+- Gregor: Eingangsbereich-Alibi ist nur teilweise behauptet; verdeckte Bewegung in Gang/Arbeitszimmer bildet Tatgelegenheit ab.
+
+## Aufloesungslogik
+- Runde-4-Hinweise (`K_DOC_GREGOR_ARCHIVZUGRIFF`, `K_PHY_WAFFENSCHRANK_RUECKSTELLUNG`, `K_DOC_ZERRISSENE_GESTAENDNISSEITE`) verknuepfen Motiv, Gelegenheit und Nachverhalten konsistent mit der Timeline.

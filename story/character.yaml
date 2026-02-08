@@ -1,258 +1,253 @@
-game:
-  title: "Schnee, Schweigen, Schuesse in der Berghuette"
-  player_count: 4
-  truth_rule:
-    default: "Alle Rollen muessen wahrheitsgemaess antworten, duerfen aber Informationen zurueckhalten."
-    exception:
-      character_id: C_MARKUS_FALK
-      rule: "Darf aktiv luegen, um den Mord an OPFER_Elias_Reuter zu verdecken."
-
-victim:
-  id: OPFER_Elias_Reuter
-  name: "Elias Reuter"
-  background: "Aelterer Bruder von Jonas Reuter, brachte Beweise zum vertuschten Unfall von vor 15 Jahren in die Lodge."
-
 characters:
-  - id: C_NOAH_BERGER
-    name: "Noah Berger"
-    role: "Bergfuehrer"
-    public_description: "Ehemaliger Jugend-Bergfuehrer, ortskundig, nach aussen ruhig und pflichtbewusst."
+  - id: C_MARCO_STEINER
+    name: "Marco Steiner"
+    role: "Bergfuehrer und ehemaliger Leiter der Jugendtouren"
+    public_description: "Routiniert, koerperlich praesent, kennt die Hochkamm-Lodge bis ins Detail."
     traits:
-      - "diszipliniert"
-      - "verschlossen"
-      - "pragmatisch"
+      - "praezise"
+      - "durchsetzungsstark"
+      - "misstrauisch"
     goals:
-      public_goal: "Die Nacht ohne weiteren Kontrollverlust ueberstehen und die Gruppe zusammenhalten."
-      private_goal: "Verhindern, dass seine fruehe Kenntnis vom defekten Sicherungsseil publik wird."
+      public_goal: "Die Nacht geordnet halten und Panik vermeiden."
+      private_goal: "Verhindern, dass seine alte Seil-Freigabe publik wird."
     relationships:
-      - with: C_SELIN_ARSLAN
-        type: "alte_verbundene_interessen"
-        valence: +1
-        notes: "Selin finanzierte vor Jahren Noahs Bergschule und kennt seine finanziellen Schwachstellen."
-      - with: C_DR_LEONIE_WEBER
-        type: "schuldgemeinschaft"
-        valence: +2
-        notes: "Leonie und Noah trafen in der Unfallsnacht gemeinsam Entscheidungen zur Erstversorgung."
-      - with: C_MARKUS_FALK
-        type: "abhangigkeit"
-        valence: -1
-        notes: "Markus vermittelte ihm kommunale Auftraege und erhielt im Gegenzug Loyalitaet."
-    secrets:
-      - id: S_NOAH_1
-        summary: "Noah meldete den bekannten Materialschaden am Sicherungsseil vor der Mutprobe absichtlich nicht."
-        stakes: "Fahrlaessige Toetung im Rueckblick / beruflicher Ruin"
-        holders: [C_NOAH_BERGER]
-        reveal_rule:
-          earliest_round: 2
-          trigger: "Wenn nach dem technischen Zustand des Seils vor der Tour gefragt wird"
-      - id: S_NOAH_2
-        summary: "Noah entfernte zwei Jahre spaeter ein Wartungsprotokoll aus dem Liftarchiv gegen Geld."
-        stakes: "Urkundenunterdrueckung / erpressbar durch Markus"
-        holders: [C_NOAH_BERGER, C_MARKUS_FALK]
-        reveal_rule:
-          earliest_round: 4
-          trigger: "Wenn Geldfluesse und spaetere Vertuschungen zur Sprache kommen"
-    murder_context:
-      motives:
-        - id: M_NOAH_1
-          type: "schutz_vor_strafverfolgung"
-          strength: 3
-          rationale: "Elias legte Fotos vor, die Noahs fruehe Kenntnis vom Seildefekt belegen."
-          supports_clues: [K_DOSSIER_FOTO_1]
-        - id: M_NOAH_2
-          type: "selbsterhalt"
-          strength: 2
-          rationale: "Mit einem oeffentlichen Gestaendnis haette Noah seine Existenzgrundlage verloren."
-          supports_clues: [K_VERTRAG_BERG_SCHULE]
-      opportunities:
-        access_level: "hoch"
-        constraints: "Kennt den Schluesselhaken und alle Nebenwege im Haus, war mehrfach unbeobachtet."
-      alibi:
-        claim: "Zwischen 20:58 und 21:04 war ich im Generatorraum wegen Stoerungen am Notstrom."
-        window: { start: "20:58", end: "21:04" }
-        witnesses: []
-        corroboration: "Im Anlagenprotokoll steht ein manueller Reset um 21:01."
-        strength: 2
-
-  - id: C_SELIN_ARSLAN
-    name: "Selin Arslan"
-    role: "Unternehmerin"
-    public_description: "Gruenderin eines Outdoor-Startups, rhetorisch stark, kontrolliert ihr Auftreten genau."
-    traits:
-      - "ehrgeizig"
-      - "strategisch"
-      - "imagebewusst"
-    goals:
-      public_goal: "Jeden Eindruck vermeiden, sie habe in der Vergangenheit Verantwortung verdrangt."
-      private_goal: "Das zweite Dossier mit Zahlungsbelegen vor Mitternacht in die Haende bekommen."
-    relationships:
-      - with: C_NOAH_BERGER
-        type: "geschaeftlich_alt"
-        valence: +1
-        notes: "Noah profitierte frueher von Selins Geld, fuehlt sich dafuer bis heute verpflichtet."
-      - with: C_DR_LEONIE_WEBER
-        type: "misstrauen"
-        valence: -2
-        notes: "Selin glaubt, Leonie habe heimlich Kopien medizinischer Altakten angefertigt."
-      - with: C_MARKUS_FALK
+      - with: C_HELENE_FALK
         type: "zweckbuendnis"
-        valence: -1
-        notes: "Beide schuetzten sich politisch und wirtschaftlich, trauen einander aber nicht."
-    secrets:
-      - id: S_SELIN_1
-        summary: "Selin zahlte den damaligen Liftwart ueber eine Briefkastenfirma fuer sein Schweigen."
-        stakes: "Bestechung / Bilanzbetrug / Firmenkollaps"
-        holders: [C_SELIN_ARSLAN]
-        reveal_rule:
-          earliest_round: 2
-          trigger: "Wenn Herkunft der Schweigegelder oder Kontobewegungen thematisiert werden"
-      - id: S_SELIN_2
-        summary: "Elias hatte einen vorbereiteten Presseentwurf, der Selins Investoren am Morgen informiert haette."
-        stakes: "Sofortiger Vertrauensverlust / Abzug von Kapital"
-        holders: [C_SELIN_ARSLAN, OPFER_Elias_Reuter]
-        reveal_rule:
-          earliest_round: 3
-          trigger: "Wenn ueber konkrete Drohungen von Elias gegen einzelne Personen gesprochen wird"
-    murder_context:
-      motives:
-        - id: M_SELIN_1
-          type: "finanziell"
-          strength: 3
-          rationale: "Die Offenlegung der Schweigezahlungen haette ihr Unternehmen in die Insolvenz gedrueckt."
-          supports_clues: [K_UEBERWEISUNG_2013]
-        - id: M_SELIN_2
-          type: "rufschutz"
-          strength: 2
-          rationale: "Selin baute ihr oeffentliches Image auf Verantwortung und Transparenz auf."
-          supports_clues: [K_PRESSENTWURF]
-      opportunities:
-        access_level: "mittel"
-        constraints: "War in der Kueche und im Weinkeller unbeobachtet und konnte den Seitenflur erreichen."
-      alibi:
-        claim: "Zwischen 20:57 und 21:03 war ich in Kueche und Weinkeller, um Eis und Wasser zu holen."
-        window: { start: "20:57", end: "21:03" }
-        witnesses: [C_NOAH_BERGER]
-        corroboration: "Noah sah Selin mit Eimer und Flaschen aus dem Keller kommen."
-        strength: 2
-
-  - id: C_DR_LEONIE_WEBER
-    name: "Dr. Leonie Weber"
-    role: "Aerztin"
-    public_description: "Renommierte Unfallchirurgin, sachlich und bedacht, unter Druck auffallend praezise."
-    traits:
-      - "analytisch"
-      - "beherrscht"
-      - "pflichtorientiert"
-    goals:
-      public_goal: "Medizinische Kontrolle behalten und Panik nach dem Schuss verhindern."
-      private_goal: "Jede Spur beseitigen, die ihre nachtraegliche Aenderung des Altfall-Berichts beweist."
-    relationships:
-      - with: C_NOAH_BERGER
+        valence: +1
+        notes: "Beide wollen den Altfall unter Kontrolle halten."
+      - with: C_DR_LEONIE_WINTER
         type: "schuldgemeinschaft"
         valence: +2
-        notes: "Noah und Leonie schirmen sich seit Jahren gegenseitig gegen Fragen zum Unfall ab."
-      - with: C_SELIN_ARSLAN
+        notes: "Leonie deckte Marcos Fehler nach dem Unfall."
+      - with: C_GREGOR_VOSS
         type: "rivalitaet"
         valence: -2
-        notes: "Leonie verachtet Selins PR-Strategie und fuehlt sich von ihr instrumentalisiert."
-      - with: C_MARKUS_FALK
-        type: "politischer_druck"
-        valence: -1
-        notes: "Markus vermittelte Leonie Klinikkontakte und verlangte spaeter Loyalitaet."
+        notes: "Marco haelt Gregor fuer den Hauptverantwortlichen der damaligen Vertuschung."
+      - with: C_O_ELIAS_REUTER
+        type: "konflikt"
+        valence: -3
+        notes: "Elias drohte mit Strafanzeige und Medienkontakt."
     secrets:
-      - id: S_LEONIE_1
-        summary: "Leonie korrigierte den Erstbericht von 2011 rueckwirkend, damit die verspaetete Notrufkette unsichtbar bleibt."
-        stakes: "Approbationsverfahren / Strafverfahren wegen Falschdokumentation"
-        holders: [C_DR_LEONIE_WEBER]
+      - id: S_MARCO_1
+        summary: "Marco hat das beschaedigte Sicherungsseil damals trotzdem als einsatzbereit protokolliert."
+        stakes: "Fahrlassige Toetung, Haft, Verlust aller Lizenzen"
+        holders: [C_MARCO_STEINER]
         reveal_rule:
           earliest_round: 2
-          trigger: "Wenn nach den medizinischen Minuten zwischen Sturz und Notruf gefragt wird"
-      - id: S_LEONIE_2
-        summary: "Leonie fand im Oktober im Klinikarchiv eine Kopie der Originalakte und informierte Markus statt der Staatsanwaltschaft."
-        stakes: "Beihilfe zur Vertuschung / Erpressbarkeit"
-        holders: [C_DR_LEONIE_WEBER, C_MARKUS_FALK]
+          trigger: "Wenn nach dem technischen Zustand der Ausruestung von damals gefragt wird."
+    alibi:
+      window:
+        start: "20:48"
+        end: "21:04"
+      location: L_TECHNIKRAUM
+      witness: [C_DR_LEONIE_WINTER]
+      statement: "Marco sagt, er habe den Notstrom geprueft und deshalb Schussgeraeusche erst verspaetet wahrgenommen."
+      weaknesses:
+        - "Leonie bestaetigt ihn nur bis etwa 20:58, danach war Marco kurz allein."
+        - "Vom Technikraum gibt es keine zeitgestempelte Aufzeichnung."
+    murder_context:
+      motives:
+        - id: M_MARCO_1
+          type: "vertuschung"
+          strength: 3
+          rationale: "Elias konnte Marcos Freigabe-Protokoll dem damaligen Tod direkt zuordnen."
+      opportunities:
+        access_level: "hoch"
+        constraints: "Kurze unbeobachtete Luecke unmittelbar vor dem Schuss."
+
+  - id: C_HELENE_FALK
+    name: "Helene Falk"
+    role: "Unternehmerin und ehemalige Gruenderin eines Outdoor-Startups"
+    public_description: "Souveraen, strategisch, wirkt in Konflikten kontrolliert."
+    traits:
+      - "eloquent"
+      - "ehrgeizig"
+      - "risikobereit"
+    goals:
+      public_goal: "Eine gemeinsame, ruhige Loesung ohne Polizei erreichen."
+      private_goal: "Finanzspuren verschwinden lassen, bevor Elias sie veroeffentlicht."
+    relationships:
+      - with: C_MARCO_STEINER
+        type: "zweckbuendnis"
+        valence: +1
+        notes: "Helene braucht Marcos Loyalitaet, um den Altfall geschlossen zu halten."
+      - with: C_DR_LEONIE_WINTER
+        type: "misstrauen"
+        valence: -1
+        notes: "Leonie kennt Helenes damalige Scheinabrechnungen."
+      - with: C_GREGOR_VOSS
+        type: "geheime_geschaefte"
+        valence: -2
+        notes: "Helene finanzierte indirekt Gregors fruehe Kampagne ueber Tarnrechnungen."
+      - with: C_O_ELIAS_REUTER
+        type: "konflikt"
+        valence: -3
+        notes: "Elias drohte, Unterlagen zu ihren Zahlungen weiterzugeben."
+    secrets:
+      - id: S_HELENE_1
+        summary: "Helene leitete nach dem Unfall Vereinsgeld ueber Scheinrechnungen um, um Schweigegeld zu finanzieren."
+        stakes: "Bilanzbetrug, Unternehmensruin, persoenliche Haftung"
+        holders: [C_HELENE_FALK]
         reveal_rule:
-          earliest_round: 4
-          trigger: "Wenn bekannt wird, dass alte Akten noch Jahre spaeter manipuliert wurden"
+          earliest_round: 2
+          trigger: "Wenn nach den Kosten der damaligen Nacht und fehlenden Belegen gefragt wird."
+    alibi:
+      window:
+        start: "20:50"
+        end: "21:05"
+      location: L_SALON
+      witness: [C_GREGOR_VOSS]
+      statement: "Helene gibt an, sie habe im Salon Unterlagen sortiert und Gregor habe sie dort mehrfach gesehen."
+      weaknesses:
+        - "Gregor bestaetigt den Aufenthalt nur bis kurz nach 21:00."
+        - "Vom Salon zum Arbeitszimmer sind nur wenige Schritte ueber den oberen Gang."
+    murder_context:
+      motives:
+        - id: M_HELENE_1
+          type: "finanziell"
+          strength: 2
+          rationale: "Ein oeffentlicher Skandal haette Helenes Firma und Kreditlinien sofort zerstoert."
+      opportunities:
+        access_level: "mittel"
+        constraints: "Hatte waehrend des Stromflackerns Bewegungsfreiheit zwischen Salon und Gang."
+
+  - id: C_DR_LEONIE_WINTER
+    name: "Dr. Leonie Winter"
+    role: "Unfallchirurgin, damals Medizinstudentin der Gruppe"
+    public_description: "Sachlich, ruhig, medizinisch autoritaer, reagiert auf Druck defensiv."
+    traits:
+      - "analytisch"
+      - "kontrolliert"
+      - "konfliktscheu"
+    goals:
+      public_goal: "Die Lage medizinisch und psychologisch stabil halten."
+      private_goal: "Verhindern, dass ihr damaliges Fehlverhalten beruflich bekannt wird."
+    relationships:
+      - with: C_MARCO_STEINER
+        type: "schuldgemeinschaft"
+        valence: +2
+        notes: "Leonie und Marco stuetzten sich bei der damaligen Aussage."
+      - with: C_HELENE_FALK
+        type: "distanzierte_freundschaft"
+        valence: 0
+        notes: "Leonie haelt Helene fuer berechnend, blieb aber aus Eigeninteresse loyal."
+      - with: C_GREGOR_VOSS
+        type: "misstrauen"
+        valence: -2
+        notes: "Gregor drueckte damals auf eine politisch guenstige Version des Unfalls."
+      - with: C_O_ELIAS_REUTER
+        type: "scham"
+        valence: -2
+        notes: "Leonie wusste, dass Elias Antworten suchte, wich ihm aber jahrelang aus."
+    secrets:
+      - id: S_LEONIE_1
+        summary: "Leonie vermerkte im alten Notizbuch eine falsche Erstversorgung, um eigenes Zoegern zu verdecken."
+        stakes: "Berufsrechtliche Konsequenzen, Approbationsverlust, Strafverfahren"
+        holders: [C_DR_LEONIE_WINTER]
+        reveal_rule:
+          earliest_round: 3
+          trigger: "Wenn konkrete Fragen zur Erstversorgung und zum Zeitpunkt des Notrufs gestellt werden."
+    alibi:
+      window:
+        start: "20:52"
+        end: "21:03"
+      location: L_SCHLAFZIMMER_UNTEN
+      witness: [C_MARCO_STEINER]
+      statement: "Leonie sagt, sie habe im unteren Schlafzimmer ein Notfallset gesucht und Schmerzmittel fuer Elias vorbereitet."
+      weaknesses:
+        - "Marco kann nur bestaetigen, dass Leonie kurz davor aus dem Technikraum kam."
+        - "Zwischen 21:03 und Schusszeit ist Leonies Weg nicht vollstaendig belegt."
     murder_context:
       motives:
         - id: M_LEONIE_1
-          type: "berufsschutz"
-          strength: 3
-          rationale: "Elias konnte Leonies handschriftliche Nachtraege im Altfall belegen."
-          supports_clues: [K_AKTENRANDNOTIZ]
-        - id: M_LEONIE_2
           type: "selbstschutz"
           strength: 2
-          rationale: "Eine oeffentliche Enthuellung haette sofortige Suspendierung und Ermittlungen ausgeloest."
-          supports_clues: [K_ARCHIV_MAIL]
+          rationale: "Elias wollte ihre damalige Dokumentation und spaetere Falschaussage publik machen."
       opportunities:
         access_level: "mittel"
-        constraints: "Bewegte sich mit Notfalltasche frei im Obergeschoss und hatte Zugang zum Nebenflur."
-      alibi:
-        claim: "Zwischen 20:56 und 21:04 versorgte ich Markus im Gaestebad wegen einer frischen Schnittwunde."
-        window: { start: "20:56", end: "21:04" }
-        witnesses: [C_MARKUS_FALK]
-        corroboration: "Benutzte Kompressen mit frischem Blut lagen im Badmuelleimer."
-        strength: 2
+        constraints: "War in der kritischen Phase nicht durchgehend beobachtet."
 
-  - id: C_MARKUS_FALK
-    name: "Markus Falk"
-    role: "Lokalpolitiker"
-    public_description: "Landespolitiker mit Integritaetsimage, redegewandt, wirkt in Konflikten verbindlich."
+  - id: C_GREGOR_VOSS
+    name: "Gregor Voss"
+    role: "Lokalpolitiker und Kandidat fuer ein Landesamt"
+    public_description: "Sicher auftretend, rhetorisch stark, gewohnt andere zu steuern."
     traits:
       - "charismatisch"
-      - "kalkulierend"
-      - "durchsetzungsstark"
+      - "manipulativ"
+      - "entscheidungsfreudig"
     goals:
-      public_goal: "Die Situation als verantwortungsvoller Vermittler kontrollieren."
-      private_goal: "Das zweite Dossier von Elias sichern und jede Verbindung zu spaeteren Aktenmanipulationen kappen."
+      public_goal: "Das Treffen ohne oeffentlichen Eklat bis zum Morgen ueberstehen."
+      private_goal: "Alle Spuren seiner spaeteren Aktenmanipulation beseitigen."
     relationships:
-      - with: C_NOAH_BERGER
-        type: "druckmittel"
+      - with: C_MARCO_STEINER
+        type: "rivalitaet"
+        valence: -2
+        notes: "Gregor betrachtet Marco als unkalkulierbares Risiko."
+      - with: C_HELENE_FALK
+        type: "geheime_geschaefte"
+        valence: -2
+        notes: "Helene kennt Gregors inoffizielle Finanzierung aus der Vergangenheit."
+      - with: C_DR_LEONIE_WINTER
+        type: "instrumentalisierung"
         valence: -1
-        notes: "Markus kennt Noahs Archivdiebstahl und setzte ihn mehrfach fuer Gefallen ein."
-      - with: C_SELIN_ARSLAN
-        type: "zweckbuendnis"
-        valence: -1
-        notes: "Selin und Markus stimmten ihre Krisennarrative ab, misstrauen sich aber tief."
-      - with: C_DR_LEONIE_WEBER
-        type: "gegenseitige_abhaengigkeit"
-        valence: +1
-        notes: "Leonie deckte Markus bei Aktenfragen, Markus schuetzte sie vor frueher Medienkritik."
+        notes: "Gregor nutzte Leonies fachliche Unsicherheit fuer die alte Erzaehlung."
+      - with: C_O_ELIAS_REUTER
+        type: "offene_feindschaft"
+        valence: -3
+        notes: "Elias kuendigte an, Gregors spaetere Akteneingriffe noch in derselben Nacht zu beweisen."
     secrets:
-      - id: S_MARKUS_1
-        summary: "Markus liess vor drei Jahren ueber einen Vertrauten den Altfall im Landesarchiv umsortieren und Teile austauschen."
-        stakes: "Amtsmissbrauch / Ende der politischen Karriere"
-        holders: [C_MARKUS_FALK]
+      - id: S_GREGOR_1
+        summary: "Gregor veranlasste Jahre spaeter die Entfernung belastender Vermerke aus einem Kreisarchiv."
+        stakes: "Ende der politischen Karriere, Strafverfahren wegen Beweismittelunterdrueckung"
+        holders: [C_GREGOR_VOSS]
         reveal_rule:
-          earliest_round: 2
-          trigger: "Wenn ueber verschwundene Originalakten oder Zugriffsprotokolle gesprochen wird"
-      - id: S_MARKUS_2
-        summary: "Elias hatte ein zweites Dossier mit Zahlungsketten und Chatprotokollen zu Markus' Einflussnahme."
-        stakes: "Sofortiger Ruecktritt / Strafverfahren"
-        holders: [C_MARKUS_FALK, OPFER_Elias_Reuter]
-        reveal_rule:
-          earliest_round: 3
-          trigger: "Wenn die Gruppe ueber ein moegliches Backup der Beweise diskutiert"
+          earliest_round: 1
+          trigger: "Wenn nach dem Verbleib der Originalakten oder politischen Kontakten in der Behoerde gefragt wird."
+    alibi:
+      window:
+        start: "20:49"
+        end: "21:05"
+      location: L_EINGANGSBEREICH
+      witness: [C_HELENE_FALK]
+      statement: "Gregor behauptet, er habe am Schluesselbrett wegen Funkempfangs telefoniert und den Flur beobachtet."
+      weaknesses:
+        - "Helene sah Gregor nur wiederholt, aber nicht durchgehend."
+        - "Der Standort liegt direkt bei Schluesselbrett und Zugang zum oberen Gang."
     murder_context:
       motives:
-        - id: M_MARKUS_1
-          type: "politischer_selbsterhalt"
+        - id: M_GREGOR_1
+          type: "macht_und_vertuschung"
           strength: 3
-          rationale: "Die Veroeffentlichung vor der Wahl haette Markus sofort unwaehlbar gemacht."
-          supports_clues: [K_CHAT_EXPORT, K_ZWEITES_DOSSIER]
-        - id: M_MARKUS_2
-          type: "vertuschung"
-          strength: 3
-          rationale: "Elias kuendigte an, die Zusatzbelege noch in derselben Nacht per Satellitengeraet zu versenden."
-          supports_clues: [K_SAT_DEVICE_HINWEIS]
+          rationale: "Elias hatte ein zweites Dossier zur spaeteren Aktenmanipulation durch Gregor."
       opportunities:
         access_level: "hoch"
-        constraints: "Kannte den Schluesselhaken, war vor dem Schuss mehrfach unbeobachtet im Obergeschoss."
-      alibi:
-        claim: "Zwischen 21:00 und 21:06 fuehrte ich im Wintergarten ein Krisentelefonat mit meinem Kampagnenleiter."
-        window: { start: "21:00", end: "21:06" }
-        witnesses: []
-        corroboration: "Im Telefon liegt ein kurzer Verbindungsabbruch um 21:02 vor, ohne belastbare Gespraechsdauer."
-        strength: 1
+        constraints: "Naehe zu Schluesselbrett und kurzer unbeobachteter Zugang zum Arbeitszimmer."
+
+  - id: C_O_ELIAS_REUTER
+    name: "Elias Reuter"
+    role: "Opfer; Bruder von Jonas Reuter"
+    public_description: "Hartnaeckig, vorbereitet und moralisch kompromisslos in der Aufarbeitung des alten Falls."
+    traits:
+      - "zielstrebig"
+      - "provokativ"
+      - "hartnaeckig"
+    goals:
+      public_goal: "Ein schriftliches Gestaendnis aller vier Verdaechtigen erzwingen."
+      private_goal: "Das zweite Dossier sichern und bei weiterer Vertuschung sofort versenden."
+    relationships:
+      - with: C_MARCO_STEINER
+        type: "anklage"
+        valence: -3
+        notes: "Hielt Marco fuer denjenigen, der das Risiko am Berg bewusst akzeptierte."
+      - with: C_HELENE_FALK
+        type: "druckmittel"
+        valence: -3
+        notes: "Kann finanzielle Vertuschung ueber Unterlagen belegen."
+      - with: C_DR_LEONIE_WINTER
+        type: "enttaeuschung"
+        valence: -2
+        notes: "Erwartete als Medizinerin von Leonie eine wahrheitsgemaesse Aussage."
+      - with: C_GREGOR_VOSS
+        type: "feindschaft"
+        valence: -3
+        notes: "Sah in Gregor den Architekten der spaeteren Aktenmanipulation."

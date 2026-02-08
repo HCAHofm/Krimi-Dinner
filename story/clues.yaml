@@ -1,0 +1,331 @@
+clues:
+  - id: K_WIT_MARCO_GANG
+    type: testimony
+    title: "Marco im oberen Gang kurz vor dem Schuss"
+    description: "Helene sah Marco kurz nach 21:00 aus Richtung Technikraum in den oberen Gang gehen."
+    polarity: incriminating
+    points_to:
+      suspects: [C_MARCO_STEINER]
+      motives: [M_MARCO_1]
+    timeline_links:
+      related_beats: [B_2103_BEWEGUNG_IM_GANG]
+    reliability: 2
+    discoverability:
+      holder: "role:C_HELENE_FALK"
+      earliest_round: 1
+      method: "Helene teilt dies nur, wenn Marco andere offen belastet."
+    knowledge:
+      initial_holders: [C_HELENE_FALK]
+      public_when_revealed: true
+    summary_points:
+      - "Marco wurde nahe Tatbereich gesehen."
+      - "Zeitlich liegt die Beobachtung unmittelbar vor dem Schuss."
+      - "Die Aussage stammt von Helene und ist daher interessengefaerbt."
+
+  - id: K_WIT_HELENE_SALON
+    type: testimony
+    title: "Helene blieb laut Gregor im Salon"
+    description: "Gregor behauptet, Helene waere um 21:00 noch im Salon mit Unterlagen beschaeftigt gewesen."
+    polarity: exculpatory
+    points_to:
+      suspects: [C_HELENE_FALK]
+      motives: [M_HELENE_1]
+    timeline_links:
+      related_beats: [B_2050_HELENE_SALONFENSTER]
+    reliability: 1
+    discoverability:
+      holder: "role:C_GREGOR_VOSS"
+      earliest_round: 1
+      method: "Gregor bringt die Aussage frueh ein, um Helene als Zeugin an sich zu binden."
+    knowledge:
+      initial_holders: [C_GREGOR_VOSS]
+      public_when_revealed: true
+    summary_points:
+      - "Helene wird fuer einen Teil des Zeitfensters entlastet."
+      - "Die Entlastung kommt ausgerechnet von Gregor."
+      - "Die Aussage deckt nicht das komplette Tatfenster ab."
+
+  - id: K_WIT_GREGOR_EINGANG
+    type: testimony
+    title: "Gregor am Schluesselbrett"
+    description: "Helene gibt an, Gregor habe vor dem Schuss mehrfach im Eingangsbereich gestanden."
+    polarity: exculpatory
+    points_to:
+      suspects: [C_GREGOR_VOSS]
+      motives: [M_GREGOR_1]
+    timeline_links:
+      related_beats: [B_2059_GREGOR_EINGANGSFENSTER]
+    reliability: 1
+    discoverability:
+      holder: "role:C_HELENE_FALK"
+      earliest_round: 1
+      method: "Helene nennt es auf Nachfrage zum Schluesselbrett."
+    knowledge:
+      initial_holders: [C_HELENE_FALK]
+      public_when_revealed: true
+    summary_points:
+      - "Gregor hat ein scheinbares Alibi am Eingangsbereich."
+      - "Der Eingangsbereich liegt direkt beim Schluesselbrett."
+      - "Die Beobachtung ist kurz und nicht durchgaengig."
+
+  - id: K_DOC_MARCO_SEILPROTOKOLL
+    type: document
+    title: "Wartungsprotokoll mit Marcos Freigabe"
+    description: "Ein altes Protokoll zeigt, dass Marco das bekannte defekte Sicherungsseil damals als einsatzbereit markierte."
+    polarity: incriminating
+    points_to:
+      suspects: [C_MARCO_STEINER]
+      motives: [M_MARCO_1]
+    timeline_links:
+      related_beats: [B_2030_GESTAENDNISFORDERUNG]
+    reliability: 3
+    discoverability:
+      holder: "location:L_ARBEITSZIMMER"
+      location: L_ARBEITSZIMMER
+      earliest_round: 2
+      method: "In Elias' Dossiermappe hinter den Funkprotokollen."
+    knowledge:
+      initial_holders: []
+      public_when_revealed: false
+    summary_points:
+      - "Dokument belegt Marcos technische Mitverantwortung."
+      - "Der Beleg erklaert ein starkes Vertuschungsmotiv."
+      - "Es handelt sich um einen belastbaren Schriftbeweis."
+
+  - id: K_PHY_MARCO_TECHNIKRESET
+    type: physical
+    title: "Notstrom-Reset im Technikraum"
+    description: "Am Bedienfeld steht ein manueller Reset kurz vor 21:00, passend zu Marcos Aussage."
+    polarity: exculpatory
+    points_to:
+      suspects: [C_MARCO_STEINER]
+      motives: [M_MARCO_1]
+    timeline_links:
+      related_beats: [B_2048_MARCO_TECHNIKFENSTER, B_2015_STROMFLACKERN]
+    reliability: 3
+    discoverability:
+      holder: "location:L_TECHNIKRAUM"
+      location: L_TECHNIKRAUM
+      earliest_round: 2
+      method: "Am Notstrompanel als aktueller Eintrag sichtbar."
+    knowledge:
+      initial_holders: []
+      public_when_revealed: true
+    summary_points:
+      - "Technikspur stuetzt Marcos Erklaerung teilweise."
+      - "Der Eintrag beweist aber nicht seine Anwesenheit ueber das gesamte Fenster."
+      - "Das schafft gleichzeitige Entlastung und Restverdacht."
+
+  - id: K_DOC_HELENE_SCHEINRECHNUNG
+    type: document
+    title: "Scheinrechnungen nach dem Altfall"
+    description: "Buchhaltungsseiten verknuepfen Helenes Firma mit Zahlungen, die als Schweigegeld deutbar sind."
+    polarity: incriminating
+    points_to:
+      suspects: [C_HELENE_FALK]
+      motives: [M_HELENE_1]
+    timeline_links:
+      related_beats: [B_1945_OFFENER_STREIT, B_2030_GESTAENDNISFORDERUNG]
+    reliability: 3
+    discoverability:
+      holder: "GM"
+      location: L_SALON
+      earliest_round: 2
+      method: "Lose Seiten in einem Aktenumschlag neben dem Kamin."
+    knowledge:
+      initial_holders: []
+      public_when_revealed: false
+    summary_points:
+      - "Die Unterlagen belegen finanzielles Risiko fuer Helene."
+      - "Damit wird ein starkes Motiv gegen Elias plausibel."
+      - "Der Beleg ist konkret und nachvollziehbar."
+
+  - id: K_MSG_HELENE_ULTIMATUM
+    type: digital
+    title: "Ungelesene Ultimatum-Nachricht"
+    description: "Auf Helenes Handy steht eine Nachricht von Elias: 'Bis heute Nacht unterschreiben, sonst geht alles raus.'"
+    polarity: incriminating
+    points_to:
+      suspects: [C_HELENE_FALK]
+      motives: [M_HELENE_1]
+    timeline_links:
+      related_beats: [B_2050_HELENE_SALONFENSTER]
+    reliability: 2
+    discoverability:
+      holder: "role:C_HELENE_FALK"
+      earliest_round: 2
+      method: "Helene kann die Nachricht zeigen oder verbergen."
+    knowledge:
+      initial_holders: [C_HELENE_FALK]
+      public_when_revealed: true
+    summary_points:
+      - "Elias setzte Helene akut unter Zeitdruck."
+      - "Die Nachricht passt zu einem Eskalationsmotiv."
+      - "Da das Geraet privat ist, braucht es aktive Offenlegung."
+
+  - id: K_WIT_LEONIE_KRISENGESPRAECH
+    type: testimony
+    title: "Nervoeses Gespraech zwischen Leonie und Elias"
+    description: "Marco hoerte Leonie und Elias heftig ueber alte Behandlungsunterlagen streiten."
+    polarity: incriminating
+    points_to:
+      suspects: [C_DR_LEONIE_WINTER]
+      motives: [M_LEONIE_1]
+    timeline_links:
+      related_beats: [B_2030_GESTAENDNISFORDERUNG]
+    reliability: 2
+    discoverability:
+      holder: "role:C_MARCO_STEINER"
+      earliest_round: 2
+      method: "Marco nutzt die Aussage als Gegenangriff, wenn er selbst unter Druck geraet."
+    knowledge:
+      initial_holders: [C_MARCO_STEINER]
+      public_when_revealed: true
+    summary_points:
+      - "Leonie hatte kurz vor der Tat sichtbaren Konflikt mit Elias."
+      - "Thema war ihre berufliche Verwundbarkeit."
+      - "Die Aussage erzeugt Motivdruck, aber keinen direkten Tatnachweis."
+
+  - id: K_PHY_LEONIE_MEDKIT
+    type: physical
+    title: "Frisch geoeffnetes Medkit"
+    description: "Im unteren Schlafzimmer liegen frische Verpackungen aus einem Notfallset, passend zu Leonies Aussage."
+    polarity: exculpatory
+    points_to:
+      suspects: [C_DR_LEONIE_WINTER]
+      motives: [M_LEONIE_1]
+    timeline_links:
+      related_beats: [B_2052_LEONIE_MEDKITFENSTER]
+    reliability: 2
+    discoverability:
+      holder: "location:L_SCHLAFZIMMER_UNTEN"
+      location: L_SCHLAFZIMMER_UNTEN
+      earliest_round: 2
+      method: "Sichtbar im offenen Abfallbehaelter neben dem Waschbecken."
+    knowledge:
+      initial_holders: []
+      public_when_revealed: true
+    summary_points:
+      - "Spur stuetzt Leonies Alibi teilweise."
+      - "Sie schliesst eine kurze Abwesenheit nicht aus."
+      - "Die Entlastung bleibt daher begrenzt."
+
+  - id: K_DOC_LEONIE_NOTIZBUCH
+    type: document
+    title: "Notizbuch mit widerspruechlichen Zeiten"
+    description: "Leonie fuehrte privat Zeiten zur Erstversorgung; zwei Eintraege widersprechen ihrer offiziellen alten Aussage."
+    polarity: incriminating
+    points_to:
+      suspects: [C_DR_LEONIE_WINTER]
+      motives: [M_LEONIE_1]
+    timeline_links:
+      related_beats: [B_1945_OFFENER_STREIT]
+    reliability: 3
+    discoverability:
+      holder: "location:L_SCHLAFZIMMER_UNTEN"
+      location: L_SCHLAFZIMMER_UNTEN
+      earliest_round: 3
+      method: "Zwischen medizinischen Unterlagen in einer Stofftasche."
+    knowledge:
+      initial_holders: []
+      public_when_revealed: false
+    summary_points:
+      - "Dokument bedroht Leonies berufliche Existenz direkt."
+      - "Es liefert ein klares Selbstschutzmotiv."
+      - "Als Schriftquelle ist der Hinweis sehr belastbar."
+
+  - id: K_DIG_GREGOR_SATWARNUNG
+    type: digital
+    title: "Entwurf auf Elias' Tablet zur Sofortweitergabe"
+    description: "Ein gespeicherter Entwurf nennt Gregor als Hauptadressaten einer bevorstehenden oeffentlichen Enthuellung."
+    polarity: incriminating
+    points_to:
+      suspects: [C_GREGOR_VOSS]
+      motives: [M_GREGOR_1]
+    timeline_links:
+      related_beats: [B_2059_GREGOR_EINGANGSFENSTER, B_2105_SCHUSS]
+    reliability: 2
+    discoverability:
+      holder: "location:L_ARBEITSZIMMER"
+      location: L_ARBEITSZIMMER
+      earliest_round: 3
+      method: "Tablet liegt gesperrt auf dem Schreibtisch; PIN-Hinweis steht auf einer Karteikarte."
+    knowledge:
+      initial_holders: []
+      public_when_revealed: true
+    summary_points:
+      - "Gregor war als Hauptziel der Enthuellung markiert."
+      - "Der Entwurf erklaert akuten Tatdruck in derselben Nacht."
+      - "Digitaler Hinweis ist interpretierbar, aber klar belastend."
+
+  - id: K_DOC_GREGOR_ARCHIVZUGRIFF
+    type: document
+    title: "Archivzugriffe ueber Mittelsmann"
+    description: "Ausdrucke zeigen, dass ueber Gregors Mitarbeitenden auf Altfallakten zugegriffen und Eintraege entfernt wurden."
+    polarity: incriminating
+    points_to:
+      suspects: [C_GREGOR_VOSS]
+      motives: [M_GREGOR_1]
+    timeline_links:
+      related_beats: [B_1945_OFFENER_STREIT]
+    reliability: 3
+    discoverability:
+      holder: "GM"
+      location: L_ARBEITSZIMMER
+      earliest_round: 4
+      method: "In einem zweiten, separat markierten Dossier von Elias."
+    knowledge:
+      initial_holders: []
+      public_when_revealed: false
+    summary_points:
+      - "Dokument verknuepft Gregor konkret mit spaeterer Aktenmanipulation."
+      - "Das schafft das staerkste Einzelmotiv fuer die Tat."
+      - "Die Spur passt direkt zur kanonischen Aufloesung."
+
+  - id: K_PHY_WAFFENSCHRANK_RUECKSTELLUNG
+    type: physical
+    title: "Schluesselrueckstellung am Brett"
+    description: "Der Haken des Waffenschrankschluessels zeigt frische Metallabriebe, obwohl niemand eine Entnahme zugibt."
+    polarity: incriminating
+    points_to:
+      suspects: [C_GREGOR_VOSS, C_MARCO_STEINER]
+      motives: [M_GREGOR_1]
+    timeline_links:
+      related_beats: [B_2105_SCHUSS, B_2107_LEICHENFUND]
+    reliability: 2
+    discoverability:
+      holder: "location:L_EINGANGSBEREICH"
+      location: L_EINGANGSBEREICH
+      earliest_round: 4
+      method: "Am Schluesselbrett bei genauer Untersuchung sichtbar."
+    knowledge:
+      initial_holders: []
+      public_when_revealed: true
+    summary_points:
+      - "Jemand entnahm den Schluessel und brachte ihn zurueck."
+      - "Die Spur bindet den Tatablauf an den Eingangsbereich."
+      - "Sie belastet besonders Personen mit Zugang zum Schluesselbrett."
+
+  - id: K_DOC_ZERRISSENE_GESTAENDNISSEITE
+    type: document
+    title: "Teilweise verbrannte Gestaendnisseite"
+    description: "Aus dem Kamin geborgene Fetzen enthalten Gregors Namen neben dem Wort 'Akte'."
+    polarity: incriminating
+    points_to:
+      suspects: [C_GREGOR_VOSS]
+      motives: [M_GREGOR_1]
+    timeline_links:
+      related_beats: [B_2105_SCHUSS, B_2107_LEICHENFUND]
+    reliability: 2
+    discoverability:
+      holder: "location:L_SALON"
+      location: L_SALON
+      earliest_round: 4
+      method: "Nur bei gezieltem Durchsieben der Kaminwanne auffindbar."
+    knowledge:
+      initial_holders: []
+      public_when_revealed: false
+    summary_points:
+      - "Die Seite deutet auf gezielte Beweisvernichtung hin."
+      - "Der Inhalt verknuepft Gregor mit Aktenmanipulation."
+      - "Der Fund staerkt die Mordhypothese gegen Gregor deutlich."
